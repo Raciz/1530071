@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>SimpleAdmin - Responsive Admin Dashboard Template</title>
+        <title>Registro De Productos - SuKarne</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -33,11 +33,11 @@
 
     <body>
         <?php
-            include 'PHP/islogin.php';
-            if(!$log)
-            {
-                header("location:index.php");
-            }
+        include 'PHP/islogin.php';
+        if(!$log)
+        {
+            header("location:index.php");
+        }
         ?>
         <div id="page-wrapper">
 
@@ -67,14 +67,14 @@
                                 <span class="clearfix"></span>
                             </div>
 
-                            
+
 
                             <!-- Top nav Right menu -->
                             <ul class="nav navbar-nav navbar-right top-navbar-items-right pull-right">
                                 <li class="hidden-xs">
                                     <form role="search" class="navbar-left app-search pull-left">
-                                         <input type="text" placeholder="Search..." class="form-control">
-                                         <a href=""><i class="fa fa-search"></i></a>
+                                        <input type="text" placeholder="Search..." class="form-control">
+                                        <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
                                 <li class="dropdown top-menu-item-xs">
@@ -84,102 +84,102 @@
                                     <ul class="dropdown-menu p-0 dropdown-menu-lg">
                                         <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
                                         <li class="list-group notification-list" style="height: 267px;">
-                                           <div class="slimscroll">
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-bell-o bg-custom"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">Updates</h5>
-                                                        <p class="m-0">
-                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-user-plus bg-danger"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New user registered</h5>
-                                                        <p class="m-0">
-                                                            <small>You have 10 unread messages</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
+                                            <div class="slimscroll">
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-diamond bg-primary"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
 
                                                 <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-cog bg-warning"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New settings</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
 
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-                                           </div>
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-bell-o bg-custom"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">Updates</h5>
+                                                            <p class="m-0">
+                                                                <small>There are <span class="text-primary font-600">2</span> new updates available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-user-plus bg-danger"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New user registered</h5>
+                                                            <p class="m-0">
+                                                                <small>You have 10 unread messages</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-diamond bg-primary"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-cog bg-warning"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New settings</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </li>
                                         <!--<li>-->
-                                            <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
-                                                <!--<small class="font-600">See all notifications</small>-->
-                                            <!--</a>-->
+                                        <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
+                                        <!--<small class="font-600">See all notifications</small>-->
+                                        <!--</a>-->
                                         <!--</li>-->
                                     </ul>
                                 </li>
@@ -222,9 +222,9 @@
                             <!--- End User Detail box -->
 
                             <!-- Left Menu Start -->
-                             <?php
-                                include 'PHP/menu.php';
-                             ?>
+                            <?php
+                            include 'PHP/menu.php';
+                            ?>
                         </div>
                     </div><!--Scrollbar wrapper-->
                 </aside>
@@ -240,35 +240,35 @@
                                     <h3>Lista De Empleados</h3>
                                     <table id="datatable-fixed-col" class="table table-striped table-bordered">
                                         <thead>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Precio</th>
-                                            <th>Cantidad</th>
-                                            <th>Descripcion</th>
-                                            <th>Proveedor</th>
-                                        </tr>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th>Cantidad</th>
+                                                <th>Descripcion</th>
+                                                <th>Proveedor</th>
+                                            </tr>
                                         </thead>
 
 
                                         <tbody>
-                                        
-                                        <?php
-                                        include 'PHP/conexion.php';
-                                        
-                                        $sql = "SELECT pr.nombre as nom, pr.precio as prec, pr.cantidad as cant, pr.descripcion as descr, p.nombre as prov FROM provedor p INNER JOIN producto pr ON pr.id_provedor = p.id_provedor";
-                                        $stmt = mysqli_query($conn,$sql) or die ("error en la consulta");
-                                        
-                                        while($row = mysqli_fetch_array($stmt))
-                                        {
-                                            echo "<tr>
+
+                                            <?php
+                                            include 'PHP/conexion.php';
+
+                                            $sql = "SELECT pr.nombre as nom, pr.precio as prec, pr.cantidad as cant, pr.descripcion as descr, p.nombre as prov FROM provedor p INNER JOIN producto pr ON pr.id_provedor = p.id_provedor";
+                                            $stmt = mysqli_query($conn,$sql) or die ("error en la consulta");
+
+                                            while($row = mysqli_fetch_array($stmt))
+                                            {
+                                                echo "<tr>
                                                     <td>".$row['nom']."</td>
                                                     <td>".$row['prec']."</td>
                                                     <td>".$row['cant']."</td>
                                                     <td>".$row['descr']."</td>
                                                     <td>".$row['prov']."</td>
                                                 </tr>";
-                                        }
-                                        ?>
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -280,9 +280,6 @@
                     <!-- end container -->
 
                     <div class="footer">
-                        <div class="pull-right hidden-xs">
-                            Project Completed <strong class="text-custom">39%</strong>.
-                        </div>
                         <div>
                             <strong>Simple Admin</strong> - Copyright &copy; 2017
                         </div>

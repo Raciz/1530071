@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>SimpleAdmin - Responsive Admin Dashboard Template</title>
+        <title>Registro De Empleados - SuKarne</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -48,8 +48,8 @@
                 <div class="topbar-left">
                     <div class="">
                         <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png" alt="logo" class="logo-lg" />
-                            <img src="assets/images/logo_sm.png" alt="logo" class="logo-sm hidden" />
+                            <img src="assets/images/SUKARNE.png" alt="logo" class="logo-lg" />
+                            <img src="assets/images/SUKARNE.png" alt="logo" class="logo-sm hidden" />
                         </a>
                     </div>
                 </div>
@@ -66,13 +66,6 @@
                                 </button>
                                 <span class="clearfix"></span>
                             </div>
-
-                            <!-- Top nav left menu -->
-                            <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Help</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
 
                             <!-- Top nav Right menu -->
                             <ul class="nav navbar-nav navbar-right top-navbar-items-right pull-right">
@@ -298,11 +291,8 @@
                     <!-- end container -->
 
                     <div class="footer">
-                        <div class="pull-right hidden-xs">
-                            Project Completed <strong class="text-custom">39%</strong>.
-                        </div>
                         <div>
-                            <strong>Simple Admin</strong> - Copyright &copy; 2017
+                            <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
                         </div>
                     </div> <!-- end footer -->
 

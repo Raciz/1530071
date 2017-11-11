@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Agregar Empleado</title>
+        <title>Agregar Empleado - SuKarne</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -15,10 +15,10 @@
         <link rel="stylesheet" href="assets/plugins/switchery/switchery.min.css">
         <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
         <!-- Summernote css -->
         <link href="assets/plugins/summernote/summernote.css" rel="stylesheet" />
 
@@ -37,11 +37,11 @@
 
     <body>
         <?php
-            include 'PHP/islogin.php';
-            if(!$log)
-            {
-                header("location:index.php");
-            }
+        include 'PHP/islogin.php';
+        if(!$log)
+        {
+            header("location:index.php");
+        }
         ?>
         <div id="page-wrapper">
 
@@ -71,19 +71,12 @@
                                 <span class="clearfix"></span>
                             </div>
 
-                            <!-- Top nav left menu -->
-                            <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Help</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-
                             <!-- Top nav Right menu -->
                             <ul class="nav navbar-nav navbar-right top-navbar-items-right pull-right">
                                 <li class="hidden-xs">
                                     <form role="search" class="navbar-left app-search pull-left">
-                                         <input type="text" placeholder="Search..." class="form-control">
-                                         <a href=""><i class="fa fa-search"></i></a>
+                                        <input type="text" placeholder="Search..." class="form-control">
+                                        <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
                                 <li class="dropdown top-menu-item-xs">
@@ -93,102 +86,102 @@
                                     <ul class="dropdown-menu p-0 dropdown-menu-lg">
                                         <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
                                         <li class="list-group notification-list" style="height: 267px;">
-                                           <div class="slimscroll">
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-bell-o bg-custom"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">Updates</h5>
-                                                        <p class="m-0">
-                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-user-plus bg-danger"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New user registered</h5>
-                                                        <p class="m-0">
-                                                            <small>You have 10 unread messages</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
+                                            <div class="slimscroll">
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-diamond bg-primary"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
 
                                                 <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-cog bg-warning"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New settings</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
 
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-                                           </div>
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-bell-o bg-custom"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">Updates</h5>
+                                                            <p class="m-0">
+                                                                <small>There are <span class="text-primary font-600">2</span> new updates available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-user-plus bg-danger"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New user registered</h5>
+                                                            <p class="m-0">
+                                                                <small>You have 10 unread messages</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-diamond bg-primary"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-cog bg-warning"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New settings</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </li>
                                         <!--<li>-->
-                                            <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
-                                                <!--<small class="font-600">See all notifications</small>-->
-                                            <!--</a>-->
+                                        <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
+                                        <!--<small class="font-600">See all notifications</small>-->
+                                        <!--</a>-->
                                         <!--</li>-->
                                     </ul>
                                 </li>
@@ -222,7 +215,7 @@
                             <div class="user-details">
                                 <div class="pull-left">
                                     <?php
-                                        echo "<img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>";
+                                    echo "<img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>";
                                     ?>
                                 </div>
                                 <div class="user-info">
@@ -234,18 +227,18 @@
 
                             <!-- Left Menu Start -->
                             <?php
-                                include 'PHP/menu.php';
-                                                                    
-                                if(isset($_POST['admin']))
-                                {
-                                     $_SESSION['admino'] = $_POST['admin'];
-                                }
-                                else if (empty($_SESSION['admino']))
-                                {
-                                    header("location:Contacto.php");
-                                }
-                            
-                             ?>
+                            include 'PHP/menu.php';
+
+                            if(isset($_POST['admin']))
+                            {
+                                $_SESSION['admino'] = $_POST['admin'];
+                            }
+                            else if (empty($_SESSION['admino']))
+                            {
+                                header("location:Contacto.php");
+                            }
+
+                            ?>
                         </div>
                     </div><!--Scrollbar wrapper-->
                 </aside>
@@ -253,11 +246,11 @@
 
                 <!-- START PAGE CONTENT -->
                 <div id="page-right-content">
-                    
+
                     <?php
-                        if($_SESSION['msn'] == "mal")
-                        {
-                            echo"<div class='alert alert-icon alert-warning alert-dismissible fade in' role='alert'>
+                    if($_SESSION['msn'] == "mal")
+                    {
+                        echo"<div class='alert alert-icon alert-warning alert-dismissible fade in' role='alert'>
                                                 <button type='button' class='close' data-dismiss='alert'
                                                         aria-label='Close'>
                                                     <span aria-hidden='true'>&times;</span>
@@ -265,11 +258,11 @@
                                                 <i class='mdi mdi-alert'></i>
                                                 <strong>Error</strong> Ingrese Todo Los Campos Requeriros
                                             </div>";
-                            $_SESSION['msn'] = "";
-                        }
-                        else if($_SESSION['msn'] == "bien")
-                        {
-                            echo "<div class='alert alert-icon alert-success alert-dismissible fade in' role='alert'>
+                        $_SESSION['msn'] = "";
+                    }
+                    else if($_SESSION['msn'] == "bien")
+                    {
+                        echo "<div class='alert alert-icon alert-success alert-dismissible fade in' role='alert'>
                                                 <button type='button' class='close' data-dismiss='alert'
                                                         aria-label='Close'>
                                                     <span aria-hidden='true'>&times;</span>
@@ -277,59 +270,59 @@
                                                 <i class='mdi mdi-check-all'></i>
                                                 <strong>Bien Hecho!</strong> El Mensaje Se Ha Enviado Con Exito
                                             </div>";
-                            $_SESSION['msn'] = "";
-                        } 
+                        $_SESSION['msn'] = "";
+                    } 
                     ?>
                     <div class="col-lg-20">
-                                <div class="p-20 m-b-20">
-                                    <h4 class="header-title m-t-0">Mensaje</h4>
-                                    <div class="p-20 m-b-20">
-                                        <form role="form" class="form-validation" action="PHP/enviarMensaje.php" method="post">
-                                            <div class="form-group row">
-                                                <label for="inputEmail3" class="col-sm-4 form-control-label">Nombre<span class="text-danger">*</span></label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="hori-pass1" class="col-sm-4 form-control-label">Correo<span class="text-danger">*</span></label>
-                                                <div class="col-sm-7">
-                                                    <input id="hori-pass1" type="email" placeholder="Ingrese Correo" name="correo" 
-                                                           class="form-control">
-                                                </div>
-                                            </div>
-                                            
-                            <div class="row">
-							<div class="col-sm-12">
-								<div class="p-20 m-b-20">
-									<h4 class="m-b-30 m-t-0 header-title">Mensaje<span class="text-danger">*</span></h4>
-									<textarea required name="mensaje" class="summernote" placeholder="Ingrese Mensaje">
-										
-									</textarea>
-								</div>
-							</div>
-						</div>
-                                        <?php    
-                                            echo "<input type='hidden' name='admini' value=".$_SESSION['admino'].">";
-                                        ?>
-                                            
-                                            <div class="form-group row">
-                                                <div class="col-sm-8 col-sm-offset-4">
-                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                                        Guardar
-                                                    </button>
-                                                    <button type="reset"
-                                                            class="btn btn-default waves-effect m-l-5">
-                                                        Limpiar
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </form>
+                        <div class="p-20 m-b-20">
+                            <h4 class="header-title m-t-0">Mensaje</h4>
+                            <div class="p-20 m-b-20">
+                                <form role="form" class="form-validation" action="PHP/enviarMensaje.php" method="post">
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-sm-4 form-control-label">Nombre<span class="text-danger">*</span></label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="hori-pass1" class="col-sm-4 form-control-label">Correo<span class="text-danger">*</span></label>
+                                        <div class="col-sm-7">
+                                            <input id="hori-pass1" type="email" placeholder="Ingrese Correo" name="correo" 
+                                                   class="form-control">
+                                        </div>
                                     </div>
 
-                                </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="p-20 m-b-20">
+                                                <h4 class="m-b-30 m-t-0 header-title">Mensaje<span class="text-danger">*</span></h4>
+                                                <textarea required name="mensaje" class="summernote" placeholder="Ingrese Mensaje">
+
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php    
+                                    echo "<input type='hidden' name='admini' value=".$_SESSION['admino'].">";
+                                    ?>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-8 col-sm-offset-4">
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                Guardar
+                                            </button>
+                                            <button type="reset"
+                                                    class="btn btn-default waves-effect m-l-5">
+                                                Limpiar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                    
+
+                        </div>
+                    </div>
+
                     <div class="footer">
                         <div>
                             <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
@@ -359,11 +352,11 @@
         <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
 
         <script src="assets/plugins/moment/moment.js"></script>
-     	<script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
-     	<script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-     	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-     	<script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
-     	<script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
+        <script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+        <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
         <script src="assets/plugins/summernote/summernote.min.js"></script>
 
         <!-- form advanced init js -->

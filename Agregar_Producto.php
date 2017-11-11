@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Agregar Empleado</title>
+        <title>Agregar Producto - SuKarne</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -313,15 +313,7 @@
                                     
                                     </div>
                                 </div>     
-                                           
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
+          
                             <div class="row">
 							<div class="col-sm-12">
 								<div class="p-20 m-b-20">
@@ -333,17 +325,14 @@
 							</div>
 						</div>
                                             
-                                            <div class="form-group row">
-                                                <div class="col-sm-8 col-sm-offset-4">
-                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                                        Guardar
-                                                    </button>
-                                                    <button type="reset"
-                                                            class="btn btn-default waves-effect m-l-5">
-                                                        Limpiar
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            <div class="form-group text-center m-b-0">
+                                <button class="btn btn-success btn-bordered btn-lg" type="submit">
+                                    Aceptar
+                                </button>
+                                <button type="reset" class="btn btn-danger btn-bordered btn-lg">
+                                    Limpiar
+                                </button>
+                            </div>
                                         </form>
                                     </div>
 

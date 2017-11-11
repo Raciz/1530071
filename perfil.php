@@ -24,11 +24,11 @@
 
     <body>
         <?php
-            include 'PHP/islogin.php';
-            if(!$log)
-            {
-                header("location:index.php");
-            }
+        include 'PHP/islogin.php';
+        if(!$log)
+        {
+            header("location:index.php");
+        }
         ?>
         <div id="page-wrapper">
 
@@ -57,13 +57,13 @@
                                 </button>
                                 <span class="clearfix"></span>
                             </div>
-                        
+
                             <!-- Top nav Right menu -->
                             <ul class="nav navbar-nav navbar-right top-navbar-items-right pull-right">
                                 <li class="hidden-xs">
                                     <form role="search" class="navbar-left app-search pull-left">
-                                         <input type="text" placeholder="Search..." class="form-control">
-                                         <a href=""><i class="fa fa-search"></i></a>
+                                        <input type="text" placeholder="Search..." class="form-control">
+                                        <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
                                 <li class="dropdown top-menu-item-xs">
@@ -73,102 +73,102 @@
                                     <ul class="dropdown-menu p-0 dropdown-menu-lg">
                                         <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
                                         <li class="list-group notification-list" style="height: 267px;">
-                                           <div class="slimscroll">
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-bell-o bg-custom"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">Updates</h5>
-                                                        <p class="m-0">
-                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-user-plus bg-danger"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New user registered</h5>
-                                                        <p class="m-0">
-                                                            <small>You have 10 unread messages</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
+                                            <div class="slimscroll">
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-diamond bg-primary"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
 
                                                 <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-cog bg-warning"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New settings</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
 
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-                                           </div>
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-bell-o bg-custom"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">Updates</h5>
+                                                            <p class="m-0">
+                                                                <small>There are <span class="text-primary font-600">2</span> new updates available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-user-plus bg-danger"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New user registered</h5>
+                                                            <p class="m-0">
+                                                                <small>You have 10 unread messages</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-diamond bg-primary"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-cog bg-warning"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New settings</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </li>
                                         <!--<li>-->
-                                            <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
-                                                <!--<small class="font-600">See all notifications</small>-->
-                                            <!--</a>-->
+                                        <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
+                                        <!--<small class="font-600">See all notifications</small>-->
+                                        <!--</a>-->
                                         <!--</li>-->
                                     </ul>
                                 </li>
@@ -212,8 +212,8 @@
 
                             <!-- Left Menu Start -->
                             <?php
-                                include 'PHP/menu.php';
-                             ?>
+                            include 'PHP/menu.php';
+                            ?>
                         </div>
                     </div><!--Scrollbar wrapper-->
                 </aside>
@@ -224,74 +224,74 @@
 
                     <div class="container">
                         <button style=";" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#panel-modal"><strong>Ayuda</strong></button>
-                                        
-                                        <div id="panel-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content p-0 b-0">
-                                                <div class="panel panel-color panel-primary">
-                                                    <div class="panel-heading">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h3 class="panel-title">Ayuda - Perfil</h3>
-                                                    </div>
-                                                    <div class="panel-body">
-                                                        <h2><p>Secciones</p></h2>
-                                                        <h4><p><b>Informacion Personal:</b></p></h4>
-                                                        <p>Aqui se nos muestra nuestra informacion personal registrada en el sistema, hay que asegurarse que esta seha correcta</p>
-                                                        <h4><p><b>Mensajes:</b></p></h4>
-                                                        <p>en esta seccion podemos ver los mensajes enviado para no sotros referente a algun problema que tengamos, avisos, etc</p>
-                                                        <h4><p><b>Cambiar Contraseña:</b></p></h4>
-                                                        <p>Aqui se un formulario con los datos requeriros para realizar el cambio de contraseña. Estos son 2:
-                                                        <ul>
-                                                            <li>La Contraseña Actual</li>
-                                                            <li>La Nueva Contraseña</li>
-                                                        </ul>
-                                                        <br>
-                                                        En contraseña actual debes ingresar la contraseña con la que estas logeado en estos momentos, despues en el siguiente caja de texto ingresamos con la contraseña con la cual ahora queremos logearnos y  la volvemos escribir en la tercera caja de texto y damos clic en aceptar
-                                                        </p>
-                                                    
-                                                           
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.modal-content -->
-                                        </div><!-- /.modal-dialog -->
+
+                        <div id="panel-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog">
+                                <div class="modal-content p-0 b-0">
+                                    <div class="panel panel-color panel-primary">
+                                        <div class="panel-heading">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h3 class="panel-title">Ayuda - Perfil</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <h2><p>Secciones</p></h2>
+                                            <h4><p><b>Informacion Personal:</b></p></h4>
+                                            <p>Aqui se nos muestra nuestra informacion personal registrada en el sistema, hay que asegurarse que esta seha correcta</p>
+                                            <h4><p><b>Mensajes:</b></p></h4>
+                                            <p>en esta seccion podemos ver los mensajes enviado para no sotros referente a algun problema que tengamos, avisos, etc</p>
+                                            <h4><p><b>Cambiar Contraseña:</b></p></h4>
+                                            <p>Aqui se un formulario con los datos requeriros para realizar el cambio de contraseña. Estos son 2:
+                                            <ul>
+                                                <li>La Contraseña Actual</li>
+                                                <li>La Nueva Contraseña</li>
+                                            </ul>
+                                            <br>
+                                            En contraseña actual debes ingresar la contraseña con la que estas logeado en estos momentos, despues en el siguiente caja de texto ingresamos con la contraseña con la cual ahora queremos logearnos y  la volvemos escribir en la tercera caja de texto y damos clic en aceptar
+                                            </p>
+
+
+                                    </div>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="p-0 text-center">
+                                <div class="member-card">
+                                    <div class="thumb-xl member-thumb m-b-10 center-block">
+                                        <img src="assets/images/users/avatar-3.jpg" class="img-circle img-thumbnail" alt="profile-image">
+                                        <i class="mdi mdi-star-circle member-star text-success" title="verified user"></i>
                                     </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="p-0 text-center">
-                                    <div class="member-card">
-                                        <div class="thumb-xl member-thumb m-b-10 center-block">
-                                            <img src="assets/images/users/avatar-3.jpg" class="img-circle img-thumbnail" alt="profile-image">
-                                            <i class="mdi mdi-star-circle member-star text-success" title="verified user"></i>
-                                        </div>
-        
-                                        <?php
-                                            include 'PHP/conexion.php';
-                                            $user = $_SESSION['username'];
-                                            $sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona
+                                    <?php
+                                    include 'PHP/conexion.php';
+                                    $user = $_SESSION['username'];
+                                    $sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona
                                                                             WHERE c.usuario = '$user'";
-                                        
-                                            $stmt = mysqli_query($conn,$sql) or die ("error en la consulta");
-                                            $row = mysqli_fetch_array($stmt);
-                                            $id = $row['id_persona'];
-                                        ?>
-                                        <div class="">
-                                            <h4 class="m-b-5">
-                                                <?php 
-                                                    echo $row['nombre']." ".$row['apellido_paterno']." ".$row['apellido_materno']; 
-                                                ?>
-                                            </h4>
-                                        </div>
+
+                                    $stmt = mysqli_query($conn,$sql) or die ("error en la consulta");
+                                    $row = mysqli_fetch_array($stmt);
+                                    $id = $row['id_persona'];
+                                    ?>
+                                    <div class="">
+                                        <h4 class="m-b-5">
+                                            <?php 
+                                            echo $row['nombre']." ".$row['apellido_paterno']." ".$row['apellido_materno']; 
+                                            ?>
+                                        </h4>
                                     </div>
+                                </div>
 
-                                </div> <!-- end card-box -->
+                            </div> <!-- end card-box -->
 
-                            </div> <!-- end col -->
-                        </div> <!-- end row -->
-                        <?php
-                            if($_SESSION['msn'] == "update")
-                            {
-                                echo"<div class='alert alert-icon alert-warning alert-dismissible fade in' role='alert'>
+                        </div> <!-- end col -->
+                    </div> <!-- end row -->
+                    <?php
+                    if($_SESSION['msn'] == "update")
+                    {
+                        echo"<div class='alert alert-icon alert-warning alert-dismissible fade in' role='alert'>
                                                 <button type='button' class='close' data-dismiss='alert'
                                                         aria-label='Close'>
                                                     <span aria-hidden='true'>&times;</span>
@@ -299,11 +299,11 @@
                                                 <i class='mdi mdi-alert'></i>
                                                 <strong>Error Al Acrualizar Contraseña</strong> Ingrese Correctamente El Valor De Todos Los Campos
                                             </div>";
-                                $_SESSION['msn'] = "";
-                            }
-                            else if($_SESSION['msn'] == "delete")
-                            {
-                                echo "<div class='alert alert-icon alert-success alert-dismissible fade in' role='alert'>
+                        $_SESSION['msn'] = "";
+                    }
+                    else if($_SESSION['msn'] == "delete")
+                    {
+                        echo "<div class='alert alert-icon alert-success alert-dismissible fade in' role='alert'>
                                                 <button type='button' class='close' data-dismiss='alert'
                                                         aria-label='Close'>
                                                     <span aria-hidden='true'>&times;</span>
@@ -311,88 +311,88 @@
                                                 <i class='mdi mdi-check-all'></i>
                                                 <strong>Borrado Exitoso</strong> El Mensaje Se Ha Borrado Con Exito
                                             </div>";
-                                $_SESSION['msn'] = "";
-                            }
-                        ?>
-                        <div class="m-t-30">
-                            <ul class="nav nav-tabs navtab-bg nav-justified">
-                                <li class="active">
-                                    <a href="#datos" data-toggle="tab" aria-expanded="true">
-                                        Datos Personales
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="#msn" data-toggle="tab" aria-expanded="false">
-                                        <?php
-                                            $sql2 = "SELECT COUNT(*) num FROM mensaje WHERE admin = '$id'";
-                                            $stmt2 = mysqli_query($conn,$sql2) or die ("error mensajes");
-                                            $row2 = mysqli_fetch_array($stmt2);
-                                        
-                                            echo "Mensajes<span class='badge badge-primary'>  ".$row2['num']."</span>";
-                                        ?>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="#changepass" data-toggle="tab" aria-expanded="false">
-                                        Cambiar Contraseña
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="datos">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <!-- Personal-Information -->
-                                            <div class="panel panel-default panel-fill">
-                                                <div class="panel-heading">
-                                                    <h3 class="panel-title">Personal Information</h3>
+                        $_SESSION['msn'] = "";
+                    }
+                    ?>
+                    <div class="m-t-30">
+                        <ul class="nav nav-tabs navtab-bg nav-justified">
+                            <li class="active">
+                                <a href="#datos" data-toggle="tab" aria-expanded="true">
+                                    Datos Personales
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#msn" data-toggle="tab" aria-expanded="false">
+                                    <?php
+                                    $sql2 = "SELECT COUNT(*) num FROM mensaje WHERE admin = '$id'";
+                                    $stmt2 = mysqli_query($conn,$sql2) or die ("error mensajes");
+                                    $row2 = mysqli_fetch_array($stmt2);
+
+                                    echo "Mensajes<span class='badge badge-primary'>  ".$row2['num']."</span>";
+                                    ?>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#changepass" data-toggle="tab" aria-expanded="false">
+                                    Cambiar Contraseña
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="datos">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!-- Personal-Information -->
+                                        <div class="panel panel-default panel-fill">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Personal Information</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <?php
+                                                $sql4 = "SELECT * FROM persona p INNER JOIN cuenta as c ON c.id_persona = p.id_persona";
+                                                $stmt4 = mysqli_query($conn,$sql4) or die ("error datos personales");
+                                                $row4 = mysqli_fetch_array($stmt4);
+                                                ?>
+                                                <div class="m-b-20">
+                                                    <strong>Nombre:</strong>
+                                                    <br>
+                                                    <p class="text-muted"><?php echo $row4['nombre']." ".$row4['apellido_paterno']." ".$row4['apellido_materno']; ?></p>
                                                 </div>
-                                                <div class="panel-body">
-                                                    <?php
-                                                        $sql4 = "SELECT * FROM persona p INNER JOIN cuenta as c ON c.id_persona = p.id_persona";
-                                                        $stmt4 = mysqli_query($conn,$sql4) or die ("error datos personales");
-                                                        $row4 = mysqli_fetch_array($stmt4);
-                                                    ?>
-                                                    <div class="m-b-20">
-                                                        <strong>Nombre:</strong>
-                                                        <br>
-                                                        <p class="text-muted"><?php echo $row4['nombre']." ".$row4['apellido_paterno']." ".$row4['apellido_materno']; ?></p>
-                                                    </div>
-                                                    <div class="m-b-20">
-                                                        <strong>Correo</strong>
-                                                        <br>
-                                                        <p class="text-muted"><?php echo $row4['correo']; ?></p>
-                                                    </div>
-                                                    <div class="m-b-20">
-                                                        <strong>Fecha De Nacimiento</strong>
-                                                        <br>
-                                                        <p class="text-muted"><?php echo $row4['fecha_nac']; ?></p>
-                                                    </div>
-                                                    <div class="m-b-20">
-                                                        <strong>Horario De Trabajo</strong>
-                                                        <br>
-                                                        <p class="text-muted"><?php echo $row4['hora_entrada']." - ".$row4['hora_salida']; ?></p>
-                                                    </div>
+                                                <div class="m-b-20">
+                                                    <strong>Correo</strong>
+                                                    <br>
+                                                    <p class="text-muted"><?php echo $row4['correo']; ?></p>
+                                                </div>
+                                                <div class="m-b-20">
+                                                    <strong>Fecha De Nacimiento</strong>
+                                                    <br>
+                                                    <p class="text-muted"><?php echo $row4['fecha_nac']; ?></p>
+                                                </div>
+                                                <div class="m-b-20">
+                                                    <strong>Horario De Trabajo</strong>
+                                                    <br>
+                                                    <p class="text-muted"><?php echo $row4['hora_entrada']." - ".$row4['hora_salida']; ?></p>
                                                 </div>
                                             </div>
-                                            <!-- Personal-Information -->
-
                                         </div>
-
-
-                                        
+                                        <!-- Personal-Information -->
 
                                     </div>
+
+
+
+
                                 </div>
-                                <div class="tab-pane" id="msn">
+                            </div>
+                            <div class="tab-pane" id="msn">
                                 <?php
-                                    $sql3 = "SELECT * FROM mensaje WHERE admin = '$id'";
-                                    $stmt3 = mysqli_query($conn,$sql3) or die ("error mensajes");
-                                    
-                                    
-                                    while($row3 = mysqli_fetch_array($stmt3))
-                                    {
-                                        echo "<div class='col-lg-4'>
+                                $sql3 = "SELECT * FROM mensaje WHERE admin = '$id'";
+                                $stmt3 = mysqli_query($conn,$sql3) or die ("error mensajes");
+
+
+                                while($row3 = mysqli_fetch_array($stmt3))
+                                {
+                                    echo "<div class='col-lg-4'>
                                                 <div class='panel panel-color panel-success'>
                                                     <div class='panel-heading'>
                                                         <h3 class='panel-title'>".$row3['nombre']."</h3>
@@ -401,7 +401,7 @@
                                                         <p>Email: ".$row3['email']."</p>
                                                         <p>".$row3['mensaje']."</p>
                                                         <br>
-                                                        
+
                                                     <form action='PHP/eliminarMensaje.php' method='post'>
                                                         <center>
                                                             <input type='hidden' name='mensaje' value=".$row3['id_mensaje'].">
@@ -410,85 +410,85 @@
                                                             </button>
                                                         <center>
                                                     </form>
-                                                            
+
                                                     </div>
                                                 </div>
                                             </div>";
-                                    }
+                                }
                                 ?>
-                                </div>
-                                <div class="tab-pane" id="changepass">
-                                    <div class="p-20 m-b-20">
-                                    
+                            </div>
+                            <div class="tab-pane" id="changepass">
+                                <div class="p-20 m-b-20">
+
                                     <h4 class="header-title m-t-0">Cambiar Contraseña</h4>
                                     <div class="p-20 m-b-20">
-                                    
-                                    <form role="form" class="form-validation" action="PHP/cambiarContraseña.php" method="post">
-                                            
-                                    <div class="form-group row">
-                                        <label for="input" class="col-sm-4 form-control-label">Contraseña Actual<span class="text-danger">*</span></label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" name="passActual" required>
-                                        </div>
+
+                                        <form role="form" class="form-validation" action="PHP/cambiarContraseña.php" method="post">
+
+                                            <div class="form-group row">
+                                                <label for="input" class="col-sm-4 form-control-label">Contraseña Actual<span class="text-danger">*</span></label>
+                                                <div class="col-sm-7">
+                                                    <input type="text" class="form-control" name="passActual" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="pass1" class="col-sm-4 form-control-label">Nueva Contraseña<span class="text-danger">*</span></label>
+                                                <div class="col-sm-7">
+                                                    <input id="pass1" type="password" name="newPass" required class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="passWord2" class="col-sm-4 form-control-label">Repetir Contraseña<span class="text-danger">*</span></label>
+                                                <div class="col-sm-7">
+                                                    <input data-parsley-equalto="#pass1" type="password" required class="form-control" name="rePass">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-8 col-sm-offset-4">
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                                        Guardar
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                            
-                                    <div class="form-group row">
-                                        <label for="pass1" class="col-sm-4 form-control-label">Nueva Contraseña<span class="text-danger">*</span></label>
-                                        <div class="col-sm-7">
-                                            <input id="pass1" type="password" name="newPass" required class="form-control">
-                                        </div>
-                                    </div>
-                                            
-                                    <div class="form-group row">
-                                        <label for="passWord2" class="col-sm-4 form-control-label">Repetir Contraseña<span class="text-danger">*</span></label>
-                                        <div class="col-sm-7">
-                                            <input data-parsley-equalto="#pass1" type="password" required class="form-control" name="rePass">
-                                        </div>
-                                    </div>
-                                            
-                            <div class="form-group row">
-                                <div class="col-sm-8 col-sm-offset-4">
-                                    <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                        Guardar
-                                    </button>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-                            </div>
                         </div>
                     </div>
-                    <!-- end container -->
-
-                    <div class="footer">
-                        <div class="pull-right hidden-xs">
-                            Project Completed <strong class="text-custom">39%</strong>.
-                        </div>
-                        <div>
-                            <strong>Simple Admin</strong> - Copyright &copy; 2017
-                        </div>
-                    </div> <!-- end footer -->
-
                 </div>
-                <!-- End #page-right-content -->
+                <!-- end container -->
+
+                <div class="footer">
+                    <div class="pull-right hidden-xs">
+                        Project Completed <strong class="text-custom">39%</strong>.
+                    </div>
+                    <div>
+                        <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
+                    </div>
+                </div> <!-- end footer -->
 
             </div>
-            <!-- end .page-contentbar -->
+            <!-- End #page-right-content -->
+
         </div>
-        <!-- End #page-wrapper -->
+        <!-- end .page-contentbar -->
+        </div>
+    <!-- End #page-wrapper -->
 
 
 
-         <!-- js placed at the end of the document so the pages load faster -->
-        <script src="assets/js/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <!-- App Js -->
-        <script src="assets/js/jquery.app.js"></script>
+    <!-- App Js -->
+    <script src="assets/js/jquery.app.js"></script>
 
     </body>
 </html>

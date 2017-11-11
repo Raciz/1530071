@@ -8,7 +8,7 @@
             <li><a href='Lista_Productos.php'><i class='mdi mdi-food-apple'></i> Lista De Productos</a></li>
         </ul>
     </li>
-    
+
     <li>
         <a href='javascript: void(0);' aria-expanded='true'><i class='mdi mdi-food'></i> Categorias<span class='fa arrow'></span></a>
         <ul class='nav-second-level nav' aria-expanded='true'>
@@ -24,7 +24,7 @@
             <li><a href='Lista_Provedores.php'><i class='mdi mdi-account-settings-variant'></i>  Lista De Provedores</a></li>
         </ul>
     </li>
-        
+
     <li>
         <a href='javascript: void(0);' aria-expanded='true'><i class='mdi mdi-account-card-details'></i>Ventas<span class='fa arrow'></span></a>
         <ul class='nav-second-level nav' aria-expanded='true'>

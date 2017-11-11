@@ -24,11 +24,11 @@
 
     <body>
         <?php
-            include 'PHP/islogin.php';
-            if($log)
-            {
-                header("location:dashboard.php");
-            }
+        include 'PHP/islogin.php';
+        if($log)
+        {
+            header("location:dashboard.php");
+        }
         ?>
         <!-- HOME -->
         <section>
@@ -47,8 +47,8 @@
                                     </h2>
                                 </div>
                                 <?php                                   
-                                    if($_SESSION['error'] == "login")
-                                    {
+                                if($_SESSION['error'] == "login")
+                                {
                                     echo "<div class='alert alert-icon alert-danger alert-dismissible fade in' role='alert'>
                                             <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                                             <span aria-hidden='true'>&times;</span>
@@ -56,7 +56,7 @@
                                             <i class='mdi mdi-block-helper'></i>
                                             <strong>ERROR!</strong> Usuario O Contraseña Incorrectos
                                           </div>";
-                                    }
+                                }
                                 ?>
                                 <div class="account-content">
                                     <form class="form-horizontal" action="PHP/login.php" method="post">

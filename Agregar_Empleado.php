@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Agregar Empleado</title>
+        <title>Agregar Empleado - SuKarne</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -15,10 +15,10 @@
         <link rel="stylesheet" href="assets/plugins/switchery/switchery.min.css">
         <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
         <!-- Summernote css -->
         <link href="assets/plugins/summernote/summernote.css" rel="stylesheet" />
 
@@ -37,11 +37,11 @@
 
     <body>
         <?php
-            include 'PHP/islogin.php';
-            if(!$log)
-            {
-                header("location:index.php");
-            }
+        include 'PHP/islogin.php';
+        if(!$log)
+        {
+            header("location:index.php");
+        }
         ?>
         <div id="page-wrapper">
 
@@ -71,19 +71,12 @@
                                 <span class="clearfix"></span>
                             </div>
 
-                            <!-- Top nav left menu -->
-                            <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Help</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-
                             <!-- Top nav Right menu -->
                             <ul class="nav navbar-nav navbar-right top-navbar-items-right pull-right">
                                 <li class="hidden-xs">
                                     <form role="search" class="navbar-left app-search pull-left">
-                                         <input type="text" placeholder="Search..." class="form-control">
-                                         <a href=""><i class="fa fa-search"></i></a>
+                                        <input type="text" placeholder="Search..." class="form-control">
+                                        <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
                                 <li class="dropdown top-menu-item-xs">
@@ -93,102 +86,102 @@
                                     <ul class="dropdown-menu p-0 dropdown-menu-lg">
                                         <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
                                         <li class="list-group notification-list" style="height: 267px;">
-                                           <div class="slimscroll">
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-bell-o bg-custom"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">Updates</h5>
-                                                        <p class="m-0">
-                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-user-plus bg-danger"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New user registered</h5>
-                                                        <p class="m-0">
-                                                            <small>You have 10 unread messages</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
+                                            <div class="slimscroll">
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-diamond bg-primary"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
 
                                                 <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-diamond bg-primary"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-cog bg-warning"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New settings</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
 
-                                               <!-- list item-->
-                                               <a href="javascript:void(0);" class="list-group-item">
-                                                  <div class="media">
-                                                     <div class="media-left p-r-10">
-                                                        <em class="fa fa-cog bg-warning"></em>
-                                                     </div>
-                                                     <div class="media-body">
-                                                        <h5 class="media-heading">New settings</h5>
-                                                        <p class="m-0">
-                                                            <small>There are new settings available</small>
-                                                        </p>
-                                                     </div>
-                                                  </div>
-                                               </a>
-                                           </div>
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-bell-o bg-custom"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">Updates</h5>
+                                                            <p class="m-0">
+                                                                <small>There are <span class="text-primary font-600">2</span> new updates available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-user-plus bg-danger"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New user registered</h5>
+                                                            <p class="m-0">
+                                                                <small>You have 10 unread messages</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-diamond bg-primary"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- list item-->
+                                                <a href="javascript:void(0);" class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left p-r-10">
+                                                            <em class="fa fa-cog bg-warning"></em>
+                                                        </div>
+                                                        <div class="media-body">
+                                                            <h5 class="media-heading">New settings</h5>
+                                                            <p class="m-0">
+                                                                <small>There are new settings available</small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </li>
                                         <!--<li>-->
-                                            <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
-                                                <!--<small class="font-600">See all notifications</small>-->
-                                            <!--</a>-->
+                                        <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
+                                        <!--<small class="font-600">See all notifications</small>-->
+                                        <!--</a>-->
                                         <!--</li>-->
                                     </ul>
                                 </li>
@@ -222,7 +215,7 @@
                             <div class="user-details">
                                 <div class="pull-left">
                                     <?php
-                                        echo "<img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>";
+                                    echo "<img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>";
                                     ?>
                                 </div>
                                 <div class="user-info">
@@ -234,8 +227,8 @@
 
                             <!-- Left Menu Start -->
                             <?php
-                                include 'PHP/menu.php';
-                             ?>
+                            include 'PHP/menu.php';
+                            ?>
                         </div>
                     </div><!--Scrollbar wrapper-->
                 </aside>
@@ -243,86 +236,86 @@
 
                 <!-- START PAGE CONTENT -->
                 <div id="page-right-content">
-                    
+
                     <div class="col-lg-15">
                         <div class="p-20 m-b-20">
 
-                        <h4 class="header-title m-t-0">Agregar Empleado</h4>
-                                    
-                        <form action="PHP/nuevoEmpleado.php" method="post" class="form-validation">
-                            <div class="form-group">
-                                <label for="userName">Usuario<span class="text-danger">*</span></label>
-                                <input type="text" name="usuario" parsley-trigger="change" required
-                                       placeholder="Ingresar Usuario" class="form-control" id="usuario">
-                            </div>
-                            <div class="form-group">
-                                <label for="emailAddress">Correo<span class="text-danger">*</span></label>
-                                <input type="email" name="email" parsley-trigger="change" required
-                                       placeholder="Ingresar Correo" class="form-control" id="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="pass1">Contraseña<span class="text-danger">*</span></label>
-                                <input id="pass1" type="password" name="pass1" placeholder="Ingresar Contraseña" required
-                                       class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="passWord2">Repetir Contraseña<span class="text-danger">*</span></label>
-                                <input data-parsley-equalto="#pass1" type="password" required
-                                       placeholder="Repetir Contraseña" class="form-control" id="passWord2">
-                            </div>
+                            <h4 class="header-title m-t-0">Agregar Empleado</h4>
 
-                            <div class="form-group">
-                                <label for="Name">Nombre<span class="text-danger">*</span></label>
-                                <input type="text" name="nombre" parsley-trigger="change" required
-                                       placeholder="Ingrese Nombre" class="form-control" id="nombre">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="Name">Apellido Paterno<span class="text-danger">*</span></label>
-                                <input type="text" name="AP" parsley-trigger="change" required
-                                       placeholder="Ingrese Apellido Materno" class="form-control" id="AP">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="Name">Apellido Materno<span class="text-danger"></span></label>
-                                <input type="text" name="AM" parsley-trigger="change" placeholder="Ingrese Apellido Materno" class="form-control" id="AM">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Fecha De Nacimiento</label>
+                            <form action="PHP/nuevoEmpleado.php" method="post" class="form-validation">
+                                <div class="form-group">
+                                    <label for="userName">Usuario<span class="text-danger">*</span></label>
+                                    <input type="text" name="usuario" parsley-trigger="change" required
+                                           placeholder="Ingresar Usuario" class="form-control" id="usuario">
+                                </div>
+                                <div class="form-group">
+                                    <label for="emailAddress">Correo<span class="text-danger">*</span></label>
+                                    <input type="email" name="email" parsley-trigger="change" required
+                                           placeholder="Ingresar Correo" class="form-control" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pass1">Contraseña<span class="text-danger">*</span></label>
+                                    <input id="pass1" type="password" name="pass1" placeholder="Ingresar Contraseña" required
+                                           class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="passWord2">Repetir Contraseña<span class="text-danger">*</span></label>
+                                    <input data-parsley-equalto="#pass1" type="password" required
+                                           placeholder="Repetir Contraseña" class="form-control" id="passWord2">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Name">Nombre<span class="text-danger">*</span></label>
+                                    <input type="text" name="nombre" parsley-trigger="change" required
+                                           placeholder="Ingrese Nombre" class="form-control" id="nombre">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Name">Apellido Paterno<span class="text-danger">*</span></label>
+                                    <input type="text" name="AP" parsley-trigger="change" required
+                                           placeholder="Ingrese Apellido Materno" class="form-control" id="AP">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Name">Apellido Materno<span class="text-danger"></span></label>
+                                    <input type="text" name="AM" parsley-trigger="change" placeholder="Ingrese Apellido Materno" class="form-control" id="AM">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Fecha De Nacimiento</label>
                                     <div>
                                         <div class="input-group">
-                                        <input type="text" name="fecha" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose">
-                                        <span class="input-group-addon bg-custom b-0"><i class="mdi mdi-calendar text-white"></i></span>
-                                    </div><!-- input-group -->
+                                            <input type="text" name="fecha" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose">
+                                            <span class="input-group-addon bg-custom b-0"><i class="mdi mdi-calendar text-white"></i></span>
+                                        </div><!-- input-group -->
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Hora De Entrada</label>
-                                <div class="input-group clockpicker" data-placement="top" data-align="top">
-                                    <input type="text" class="form-control" required placeholder="Ingrese Hora De Entrada" name="entrada">
-                                    <span class="input-group-addon"> <span class="mdi mdi-clock"></span> </span>
+                                <div class="form-group">
+                                    <label>Hora De Entrada</label>
+                                    <div class="input-group clockpicker" data-placement="top" data-align="top">
+                                        <input type="text" class="form-control" required placeholder="Ingrese Hora De Entrada" name="entrada">
+                                        <span class="input-group-addon"> <span class="mdi mdi-clock"></span> </span>
+                                    </div>
+                                    <label>Hora De Salida</label>
+                                    <div class="input-group clockpicker" data-placement="top" data-align="top">
+                                        <input type="text" class="form-control" required placeholder="Ingrese Hora De Salida" name="salida">
+                                        <span class="input-group-addon"> <span class="mdi mdi-clock"></span> </span>
+                                    </div>
                                 </div>
-                                <label>Hora De Salida</label>
-                                <div class="input-group clockpicker" data-placement="top" data-align="top">
-                                    <input type="text" class="form-control" required placeholder="Ingrese Hora De Salida" name="salida">
-                                    <span class="input-group-addon"> <span class="mdi mdi-clock"></span> </span>
+                                <div class="form-group text-center m-b-0">
+                                    <button class="btn btn-success btn-bordered btn-lg" type="submit">
+                                        Aceptar
+                                    </button>
+                                    <button type="reset" class="btn btn-danger btn-bordered btn-lg">
+                                        Limpiar
+                                    </button>
                                 </div>
-                            </div>
-                            <div class="form-group text-center m-b-0">
-                                <button class="btn btn-success btn-bordered btn-lg" type="submit">
-                                    Aceptar
-                                </button>
-                                <button type="reset" class="btn btn-danger btn-bordered btn-lg">
-                                    Limpiar
-                                </button>
-                            </div>
-                        </form>
-                                    
+                            </form>
+
 
                         </div>
                     </div>
-                    
+
                     <div class="footer">
                         <div>
                             <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
@@ -352,11 +345,11 @@
         <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
 
         <script src="assets/plugins/moment/moment.js"></script>
-     	<script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
-     	<script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-     	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-     	<script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
-     	<script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
+        <script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+        <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+        <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
         <script src="assets/plugins/summernote/summernote.min.js"></script>
 
         <!-- form advanced init js -->
