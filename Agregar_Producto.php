@@ -40,7 +40,7 @@
             include 'PHP/islogin.php';
             if(!$log)
             {
-                header("location:../index.php");
+                header("location:index.php");
             }
         ?>
         <div id="page-wrapper">
@@ -291,7 +291,7 @@
                                 </div>
                                             
                                 <div class="form-group row">
-                                                <label for="webSite" class="col-sm-4 form-control-label">Proveedor<span class="text-danger">*</span></label>
+                                                <label for="webSite" class="col-sm-4 form-control-label">Categoria<span class="text-danger">*</span></label>
                                                 <div class="col-sm-7">
                                                     
                                     

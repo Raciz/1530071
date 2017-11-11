@@ -30,7 +30,7 @@
             include 'PHP/islogin.php';
             if(!$log)
             {
-                header("location:../index.php");
+                header("location:index.php");
             }
         ?>
         <div id="page-wrapper">

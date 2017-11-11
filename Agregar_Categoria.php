@@ -40,7 +40,7 @@
             include 'PHP/islogin.php';
             if(!$log)
             {
-                header("location:../index.php");
+                header("location:index.php");
             }
         ?>
         <div id="page-wrapper">
@@ -241,7 +241,7 @@
                     
                     <div class="col-lg-20">
                                 <div class="p-20 m-b-20">
-                                    <h4 class="header-title m-t-0">Agregar Producto</h4>
+                                    <h4 class="header-title m-t-0">Agregar Categoria</h4>
                                     <div class="p-20 m-b-20">
                                         <form role="form" class="form-validation" action="PHP/nuevaCategoria.php" method="post">
                                             <div class="form-group row">

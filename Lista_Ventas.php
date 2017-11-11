@@ -48,8 +48,8 @@
                 <div class="topbar-left">
                     <div class="">
                         <a href="index.html" class="logo">
-                            <img src="assets/images/SUKARNE.png" alt="logo" class="logo-lg" />
-                            <img src="assets/images/SUKARNE.png" alt="logo" class="logo-sm hidden" />
+                            <img src="assets/images/logo.png" alt="logo" class="logo-lg" />
+                            <img src="assets/images/logo_sm.png" alt="logo" class="logo-sm hidden" />
                         </a>
                     </div>
                 </div>
@@ -67,7 +67,12 @@
                                 <span class="clearfix"></span>
                             </div>
 
-                            
+                            <!-- Top nav left menu -->
+                            <ul class="nav navbar-nav hidden-sm hidden-xs top-navbar-items">
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
 
                             <!-- Top nav Right menu -->
                             <ul class="nav navbar-nav navbar-right top-navbar-items-right pull-right">
@@ -234,46 +239,153 @@
                 <div id="page-right-content">
 
                     <div class="container">
-                        <div class="row p-t-20">
-                            <div class="col-sm-12">
-                                <div class="m-b-20 table-responsive">
-                                    <h3>Lista De Empleados</h3>
-                                    <table id="datatable-fixed-col" class="table table-striped table-bordered">
+                        <div class="m-b-20 table-responsive">
+
+                                    <h5>Responsive Example</h5>
+                                    <p class="text-muted font-13 m-b-30">
+                                        Responsive is an extension for DataTables that resolves that problem by optimising the
+                                        table's layout for different screen sizes through the dynamic insertion and removal of
+                                        columns from the table.
+                                    </p>
+
+                                    <div id="datatable-responsive_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-6"><div class="dataTables_length" id="datatable-responsive_length"><label>Show <select name="datatable-responsive_length" aria-controls="datatable-responsive" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-6"><div id="datatable-responsive_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="datatable-responsive"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;">
                                         <thead>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Precio</th>
-                                            <th>Cantidad</th>
-                                            <th>Descripcion</th>
-                                            <th>Proveedor</th>
-                                        </tr>
+                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-sort="ascending" aria-label="First name: activate to sort column descending" style="width: 75px;">First name</th><th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Last name: activate to sort column ascending" style="width: 73px;">Last name</th><th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 161px; display: none;">Position</th><th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 68px; display: none;">Office</th><th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 27px; display: none;">Age</th><th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 70px; display: none;">Start date</th><th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 50px; display: none;">Salary</th><th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Extn.: activate to sort column ascending" style="width: 35px; display: none;">Extn.</th><th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="E-mail: activate to sort column ascending" style="width: 44px; display: none;">E-mail</th></tr>
                                         </thead>
-
-
                                         <tbody>
                                         
-                                        <?php
-                                        include 'PHP/conexion.php';
                                         
-                                        $sql = "SELECT pr.nombre as nom, pr.precio as prec, pr.cantidad as cant, pr.descripcion as descr, p.nombre as prov FROM provedor p INNER JOIN producto pr ON pr.id_provedor = p.id_provedor";
-                                        $stmt = mysqli_query($conn,$sql) or die ("error en la consulta");
                                         
-                                        while($row = mysqli_fetch_array($stmt))
-                                        {
-                                            echo "<tr>
-                                                    <td>".$row['nom']."</td>
-                                                    <td>".$row['prec']."</td>
-                                                    <td>".$row['cant']."</td>
-                                                    <td>".$row['descr']."</td>
-                                                    <td>".$row['prov']."</td>
-                                                </tr>";
-                                        }
-                                        ?>
-                                        </tbody>
-                                    </table>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1" tabindex="0">Airi</td>
+                                            <td>Satou</td>
+                                            <td style="display: none;">Accountant</td>
+                                            <td style="display: none;">Tokyo</td>
+                                            <td style="display: none;">33</td>
+                                            <td style="display: none;">2008/11/28</td>
+                                            <td style="display: none;">$162,700</td>
+                                            <td style="display: none;">5407</td>
+                                            <td style="display: none;">a.satou@datatables.net</td>
+                                        </tr><tr role="row" class="even">
+                                            <td class="sorting_1" tabindex="0">Angelica</td>
+                                            <td>Ramos</td>
+                                            <td style="display: none;">Chief Executive Officer (CEO)</td>
+                                            <td style="display: none;">London</td>
+                                            <td style="display: none;">47</td>
+                                            <td style="display: none;">2009/10/09</td>
+                                            <td style="display: none;">$1,200,000</td>
+                                            <td style="display: none;">5797</td>
+                                            <td style="display: none;">a.ramos@datatables.net</td>
+                                        </tr><tr role="row" class="odd">
+                                            <td class="sorting_1" tabindex="0">Ashton</td>
+                                            <td>Cox</td>
+                                            <td style="display: none;">Junior Technical Author</td>
+                                            <td style="display: none;">San Francisco</td>
+                                            <td style="display: none;">66</td>
+                                            <td style="display: none;">2009/01/12</td>
+                                            <td style="display: none;">$86,000</td>
+                                            <td style="display: none;">1562</td>
+                                            <td style="display: none;">a.cox@datatables.net</td>
+                                        </tr><tr role="row" class="even">
+                                            <td class="sorting_1" tabindex="0">Bradley</td>
+                                            <td>Greer</td>
+                                            <td style="display: none;">Software Engineer</td>
+                                            <td style="display: none;">London</td>
+                                            <td style="display: none;">41</td>
+                                            <td style="display: none;">2012/10/13</td>
+                                            <td style="display: none;">$132,000</td>
+                                            <td style="display: none;">2558</td>
+                                            <td style="display: none;">b.greer@datatables.net</td>
+                                        </tr><tr role="row" class="odd">
+                                            <td class="sorting_1" tabindex="0">Brenden</td>
+                                            <td>Wagner</td>
+                                            <td style="display: none;">Software Engineer</td>
+                                            <td style="display: none;">San Francisco</td>
+                                            <td style="display: none;">28</td>
+                                            <td style="display: none;">2011/06/07</td>
+                                            <td style="display: none;">$206,850</td>
+                                            <td style="display: none;">1314</td>
+                                            <td style="display: none;">b.wagner@datatables.net</td>
+                                        </tr><tr role="row" class="even">
+                                            <td class="sorting_1" tabindex="0">Brielle</td>
+                                            <td>Williamson</td>
+                                            <td style="display: none;">Integration Specialist</td>
+                                            <td style="display: none;">New York</td>
+                                            <td style="display: none;">61</td>
+                                            <td style="display: none;">2012/12/02</td>
+                                            <td style="display: none;">$372,000</td>
+                                            <td style="display: none;">4804</td>
+                                            <td style="display: none;">b.williamson@datatables.net</td>
+                                        </tr><tr role="row" class="odd">
+                                            <td class="sorting_1" tabindex="0">Caesar</td>
+                                            <td>Vance</td>
+                                            <td style="display: none;">Pre-Sales Support</td>
+                                            <td style="display: none;">New York</td>
+                                            <td style="display: none;">21</td>
+                                            <td style="display: none;">2011/12/12</td>
+                                            <td style="display: none;">$106,450</td>
+                                            <td style="display: none;">8330</td>
+                                            <td style="display: none;">c.vance@datatables.net</td>
+                                        </tr><tr role="row" class="even">
+                                            <td class="sorting_1" tabindex="0">Cedric</td>
+                                            <td>Kelly</td>
+                                            <td style="display: none;">Senior Javascript Developer</td>
+                                            <td style="display: none;">Edinburgh</td>
+                                            <td style="display: none;">22</td>
+                                            <td style="display: none;">2012/03/29</td>
+                                            <td style="display: none;">$433,060</td>
+                                            <td style="display: none;">6224</td>
+                                            <td style="display: none;">c.kelly@datatables.net</td>
+                                        </tr><tr role="row" class="odd">
+                                            <td class="sorting_1" tabindex="0">Charde</td>
+                                            <td>Marshall</td>
+                                            <td style="display: none;">Regional Director</td>
+                                            <td style="display: none;">San Francisco</td>
+                                            <td style="display: none;">36</td>
+                                            <td style="display: none;">2008/10/16</td>
+                                            <td style="display: none;">$470,600</td>
+                                            <td style="display: none;">6741</td>
+                                            <td style="display: none;">c.marshall@datatables.net</td>
+                                        </tr><tr role="row" class="even">
+                                            <td class="sorting_1" tabindex="0">Colleen</td>
+                                            <td>Hurst</td>
+                                            <td style="display: none;">Javascript Developer</td>
+                                            <td style="display: none;">San Francisco</td>
+                                            <td style="display: none;">39</td>
+                                            <td style="display: none;">2009/09/15</td>
+                                            <td style="display: none;">$205,500</td>
+                                            <td style="display: none;">2360</td>
+                                            <td style="display: none;">c.hurst@datatables.net</td>
+                                        </tr></tbody>
+                                    </table></div></div><div class="row"><div class="col-sm-6"><div class="dataTables_info" id="datatable-responsive_info" role="status" aria-live="polite">Showing 1 to 10 of 30 entries</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_simple_numbers" id="datatable-responsive_paginate"><ul class="pagination"><li class="paginate_button previous disabled" aria-controls="datatable-responsive" tabindex="0" id="datatable-responsive_previous"><a href="#">Previous</a></li><li class="paginate_button active" aria-controls="datatable-responsive" tabindex="0"><a href="#">1</a></li><li class="paginate_button " aria-controls="datatable-responsive" tabindex="0"><a href="#">2</a></li><li class="paginate_button " aria-controls="datatable-responsive" tabindex="0"><a href="#">3</a></li><li class="paginate_button next" aria-controls="datatable-responsive" tabindex="0" id="datatable-responsive_next"><a href="#">Next</a></li></ul></div></div></div></div>
                                 </div>
-                            </div>
-                        </div>
                         <!-- end row -->
 
                     </div>

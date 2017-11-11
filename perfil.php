@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>SimpleAdmin - Responsive Admin Dashboard Template</title>
+        <title>Perfil - SuKarne</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -27,7 +27,7 @@
             include 'PHP/islogin.php';
             if(!$log)
             {
-                header("location:../index.php");
+                header("location:index.php");
             }
         ?>
         <div id="page-wrapper">
@@ -223,6 +223,39 @@
                 <div id="page-right-content">
 
                     <div class="container">
+                        <button style=";" class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#panel-modal"><strong>Ayuda</strong></button>
+                                        
+                                        <div id="panel-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content p-0 b-0">
+                                                <div class="panel panel-color panel-primary">
+                                                    <div class="panel-heading">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                        <h3 class="panel-title">Ayuda - Perfil</h3>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <h2><p>Secciones</p></h2>
+                                                        <h4><p><b>Informacion Personal:</b></p></h4>
+                                                        <p>Aqui se nos muestra nuestra informacion personal registrada en el sistema, hay que asegurarse que esta seha correcta</p>
+                                                        <h4><p><b>Mensajes:</b></p></h4>
+                                                        <p>en esta seccion podemos ver los mensajes enviado para no sotros referente a algun problema que tengamos, avisos, etc</p>
+                                                        <h4><p><b>Cambiar Contraseña:</b></p></h4>
+                                                        <p>Aqui se un formulario con los datos requeriros para realizar el cambio de contraseña. Estos son 2:
+                                                        <ul>
+                                                            <li>La Contraseña Actual</li>
+                                                            <li>La Nueva Contraseña</li>
+                                                        </ul>
+                                                        <br>
+                                                        En contraseña actual debes ingresar la contraseña con la que estas logeado en estos momentos, despues en el siguiente caja de texto ingresamos con la contraseña con la cual ahora queremos logearnos y  la volvemos escribir en la tercera caja de texto y damos clic en aceptar
+                                                        </p>
+                                                    
+                                                           
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div>
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="p-0 text-center">
@@ -231,7 +264,7 @@
                                             <img src="assets/images/users/avatar-3.jpg" class="img-circle img-thumbnail" alt="profile-image">
                                             <i class="mdi mdi-star-circle member-star text-success" title="verified user"></i>
                                         </div>
-                                        
+        
                                         <?php
                                             include 'PHP/conexion.php';
                                             $user = $_SESSION['username'];
@@ -308,145 +341,46 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="datos">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-12">
                                             <!-- Personal-Information -->
                                             <div class="panel panel-default panel-fill">
                                                 <div class="panel-heading">
                                                     <h3 class="panel-title">Personal Information</h3>
                                                 </div>
                                                 <div class="panel-body">
+                                                    <?php
+                                                        $sql4 = "SELECT * FROM persona p INNER JOIN cuenta as c ON c.id_persona = p.id_persona";
+                                                        $stmt4 = mysqli_query($conn,$sql4) or die ("error datos personales");
+                                                        $row4 = mysqli_fetch_array($stmt4);
+                                                    ?>
                                                     <div class="m-b-20">
-                                                        <strong>Full Name</strong>
+                                                        <strong>Nombre:</strong>
                                                         <br>
-                                                        <p class="text-muted">Johnathan Deo</p>
+                                                        <p class="text-muted"><?php echo $row4['nombre']." ".$row4['apellido_paterno']." ".$row4['apellido_materno']; ?></p>
                                                     </div>
                                                     <div class="m-b-20">
-                                                        <strong>Mobile</strong>
+                                                        <strong>Correo</strong>
                                                         <br>
-                                                        <p class="text-muted">(123) 123 1234</p>
+                                                        <p class="text-muted"><?php echo $row4['correo']; ?></p>
                                                     </div>
                                                     <div class="m-b-20">
-                                                        <strong>Email</strong>
+                                                        <strong>Fecha De Nacimiento</strong>
                                                         <br>
-                                                        <p class="text-muted">johnath@domain.com</p>
+                                                        <p class="text-muted"><?php echo $row4['fecha_nac']; ?></p>
                                                     </div>
-                                                    <div class="about-info-p m-b-0">
-                                                        <strong>Location</strong>
+                                                    <div class="m-b-20">
+                                                        <strong>Horario De Trabajo</strong>
                                                         <br>
-                                                        <p class="text-muted">USA</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Personal-Information -->
-
-                                            <!-- Social -->
-                                            <div class="panel panel-default panel-fill">
-                                                <div class="panel-heading">
-                                                    <h3 class="panel-title">Social</h3>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <ul class="social-links list-inline m-b-0">
-                                                        <li>
-                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- Social -->
-                                        </div>
-
-
-                                        <div class="col-md-8">
-                                            <!-- Personal-Information -->
-                                            <div class="panel panel-default panel-fill">
-                                                <div class="panel-heading">
-                                                    <h3 class="panel-title">Biography</h3>
-                                                </div>
-                                                <div class="panel-body">
-                                                    <h5 class="header-title text-uppercase">About</h5>
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                        industry. Lorem Ipsum has been the industry's standard dummy
-                                                        text ever since the 1500s, when an unknown printer took a galley
-                                                        of type and scrambled it to make a type specimen book. It has
-                                                        survived not only five centuries, but also the leap into
-                                                        electronic typesetting, remaining essentially unchanged.</p>
-
-                                                    <p><strong>But also the leap into electronic typesetting, remaining
-                                                        essentially unchanged.</strong></p>
-
-                                                    <p>It was popularised in the 1960s with the release of Letraset
-                                                        sheets containing Lorem Ipsum passages, and more recently with
-                                                        desktop publishing software like Aldus PageMaker including
-                                                        versions of Lorem Ipsum.</p>
-
-                                                    <div class="">
-
-                                                        <h5 class="header-title text-uppercase m-t-30 m-b-20">Skills</h5>
-
-                                                        <div class="m-b-15">
-                                                            <h5>Angular Js <span
-                                                                    class="pull-right">60%</span></h5>
-                                                            <div class="progress">
-                                                                <div class="progress-bar progress-bar-primary"
-                                                                     role="progressbar" aria-valuenow="60"
-                                                                     aria-valuemin="0" aria-valuemax="100"
-                                                                     style="width: 60%">
-                                                                    <span class="sr-only">60% Complete</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="m-b-15">
-                                                            <h5>Javascript <span
-                                                                    class="pull-right">90%</span></h5>
-                                                            <div class="progress">
-                                                                <div class="progress-bar progress-bar-primary"
-                                                                     role="progressbar" aria-valuenow="90"
-                                                                     aria-valuemin="0" aria-valuemax="100"
-                                                                     style="width: 90%">
-                                                                    <span class="sr-only">90% Complete</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="m-b-15">
-                                                            <h5>Wordpress <span
-                                                                    class="pull-right">80%</span></h5>
-                                                            <div class="progress">
-                                                                <div class="progress-bar progress-bar-primary"
-                                                                     role="progressbar" aria-valuenow="80"
-                                                                     aria-valuemin="0" aria-valuemax="100"
-                                                                     style="width: 80%">
-                                                                    <span class="sr-only">80% Complete</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="m-b-0">
-                                                            <h5>HTML5 &amp; CSS3 <span class="pull-right">95%</span>
-                                                            </h5>
-                                                            <div class="progress m-b-0">
-                                                                <div class="progress-bar progress-bar-primary"
-                                                                     role="progressbar" aria-valuenow="95"
-                                                                     aria-valuemin="0" aria-valuemax="100"
-                                                                     style="width: 95%">
-                                                                    <span class="sr-only">95% Complete</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
+                                                        <p class="text-muted"><?php echo $row4['hora_entrada']." - ".$row4['hora_salida']; ?></p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- Personal-Information -->
 
                                         </div>
+
+
+                                        
 
                                     </div>
                                 </div>
@@ -547,7 +481,7 @@
 
 
 
-        <!-- js placed at the end of the document so the pages load faster -->
+         <!-- js placed at the end of the document so the pages load faster -->
         <script src="assets/js/jquery-2.1.4.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/metisMenu.min.js"></script>

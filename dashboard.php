@@ -30,7 +30,7 @@
             include 'PHP/islogin.php';
             if(!$log)
             {
-                header("location:../index.php");
+                header("location:index.php");
             }
         ?>
         <div id="page-wrapper">
@@ -227,7 +227,14 @@
                 <!-- START PAGE CONTENT -->
                 <div id="page-right-content">
                     <div class="container">
-
+                        
+                        
+                        
+                           <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="header-title m-t-0">Dashboard</h4>
+                            </div>
+                        </div>
                     <div class="row">
                             <div class="col-sm-6">
                                 <div class="card-box">
@@ -276,68 +283,91 @@
                             </div>
                     </div>
                         
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="p-20 m-b-20">
-                                <h5 class="m-t-0">Ventas Anuales</h5>
-                                <div id="morris-area-example" style="height: 300px;"></div>
-                            </div>
-                        </div>
-                    </div>
                         
                         
                         
-                        <div class="row">
+                           <div class="row">
                             <div class="col-sm-12">
                                 <h4 class="header-title m-t-0">Estadisticas</h4>
                             </div>
                         </div>
-                        
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="p-20 m-b-20">
-                                    <h5 class="m-t-0">Visitast</h5>
-                                    
 
-                                    <div id="website-stats1" style="height: 320px;" class="flot-chart"></div>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="p-20 m-b-20">
-                                    <h5 class="m-t-0">Stacked Bar Chart</h5>
-                                   
+                                    <h5 class="m-t-0">Ventas Anuales</h5>
+                                    
                                     <div id="morris-bar-stacked" style="height: 300px;"></div>
 
                                 </div>
                             </div>
 
+                            <div class="col-lg-6">
 
-                        </div>
-                        <!-- end row -->
-
-
-                        </div>
-                        <!-- end row -->
-                        <div class="row">
-                             <div class="col-lg-6">
                                 <div class="p-20 m-b-20">
-                                    <h5 class="m-t-0">Ventas Online Vs Ventas Ofline</h5>
-                                    <div id="website-stats" style="height: 320px;" class="flot-chart"></div>
+                                    <h5 class="m-t-0">% De Satisfacion De Clientela</h5>
+                                    
+
+                                    <div id="morris-area-example" style="height: 300px;"></div>
+
                                 </div>
                             </div>
+
+                        </div>
+                        <!-- end row -->
+
+
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                                <div class="p-20 m-b-20">
+                                    <h5 class="m-t-0">Ganancias Y Gastos</h5>
+                                    
+
+                                    <div id="morris-line-example" style="height: 300px;"></div>
+
+                                </div> <!-- p-20 m-b-20 -->
+
+                            </div> <!-- end row -->
+
                             <div class="col-lg-6">
                                 <div class="p-20 m-b-20">
-                                    <h5 class="m-t-0">Ventas Por Categoria</h5>
-                                    <div id="pie-chart">
-                                        <div id="pie-chart-container" class="flot-chart" style="height: 260px;"></div>
-                                    </div>
+                                    <h5 class="m-t-0">Calidad De Servicios</h5>
+                                    <div id="morris-bar-example" style="height: 320px;"></div>
+
                                 </div>
                             </div>
                         </div>
+                        <!-- end row -->
+
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+
+                                <div class="p-20 m-b-20">
+                                    <h5 class="m-t-0">Ventas Online Vs Ventas Ofline</h5>
+                                    
+
+                                    <div id="morris-area-with-dotted" style="height: 320px;"></div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+
+                                <div class="p-20 m-b-20">
+                                    <h5 class="m-t-0">Productos Por Provedor</h5>
+                                    
+
+                                    <div id="morris-donut-example" style="height: 320px;"></div>
+
+                                </div>
+                            </div>
+
                         </div>
+                        <!-- end row -->
+                    </div>
                     <div class="footer">
                         <div>
                             <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017

@@ -25,8 +25,13 @@
         </ul>
     </li>
         
-    <li><a href=''><i class='mdi mdi-cash'></i>Ventas</a></li>
-    
+    <li>
+        <a href='javascript: void(0);' aria-expanded='true'><i class='mdi mdi-account-card-details'></i>Ventas<span class='fa arrow'></span></a>
+        <ul class='nav-second-level nav' aria-expanded='true'>
+            <li><a href='Agregar_Venta.php'><i class='mdi mdi-account-plus'></i> Realizar Venta</a></li>
+            <li><a href='Lista_Ventas.php'><i class='mdi mdi-account-settings-variant'></i> Listado De Ventas</a></li>
+        </ul>
+    </li>
     <li>
         <a href='javascript: void(0);' aria-expanded='true'><i class='mdi mdi-account-card-details'></i>Empleados<span class='fa arrow'></span></a>
         <ul class='nav-second-level nav' aria-expanded='true'>

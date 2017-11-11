@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>SimpleAdmin - Responsive Admin Dashboard Template</title>
+        <title>Iniciar Sesion - SuKarne</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -23,7 +23,13 @@
 
 
     <body>
-
+        <?php
+            include 'PHP/islogin.php';
+            if($log)
+            {
+                header("location:dashboard.php");
+            }
+        ?>
         <!-- HOME -->
         <section>
             <div class="container">
@@ -40,13 +46,8 @@
                                         </a>
                                     </h2>
                                 </div>
-                                <?php 
-                                    include 'PHP/islogin.php';
-                                    if($log)
-                                    {
-                                        header("location:dashboard.php");
-                                    }
-                                    else if($_SESSION['error'] == "login")
+                                <?php                                   
+                                    if($_SESSION['error'] == "login")
                                     {
                                     echo "<div class='alert alert-icon alert-danger alert-dismissible fade in' role='alert'>
                                             <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
