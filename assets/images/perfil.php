@@ -423,7 +423,7 @@
                                     <h4 class="header-title m-t-0">Cambiar Contraseña</h4>
                                     <div class="p-20 m-b-20">
 
-                                        <form role="form" class="form-validation" autocomplete="off" action="PHP/cambiarContraseña.php" method="post">
+                                        <form role="form" class="form-validation" action="PHP/cambiarContraseña.php" method="post">
 
                                             <div class="form-group row">
                                                 <label for="input" class="col-sm-4 form-control-label">Contraseña Actual<span class="text-danger">*</span></label>

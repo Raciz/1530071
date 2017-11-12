@@ -10,10 +10,10 @@
     </li>
 
     <li>
-        <a href='javascript: void(0);' aria-expanded='true'><i class='mdi mdi-food'></i> Categorias<span class='fa arrow'></span></a>
+        <a href='javascript: void(0);' aria-expanded='true'><i class='mdi mdi-food-variant'></i> Categorias<span class='fa arrow'></span></a>
         <ul class='nav-second-level nav' aria-expanded='true'>
-            <li><a href='Agregar_Categoria.php'><i class='mdi mdi-food-variant'></i> Agregar Categoria</a></li>
-            <li><a href='Lista_Categorias.php'><i class='mdi mdi-food-apple'></i> Lista De Caegorias</a></li>
+            <li><a href='Agregar_Categoria.php'><i class='mdi mdi-food-fork-drink'></i> Agregar Categoria</a></li>
+            <li><a href='Lista_Categorias.php'><i class='mdi mdi-food-off'></i> Lista De Categorias</a></li>
         </ul>
     </li>
 
@@ -26,10 +26,10 @@
     </li>
 
     <li>
-        <a href='javascript: void(0);' aria-expanded='true'><i class='mdi mdi-account-card-details'></i>Ventas<span class='fa arrow'></span></a>
+        <a href='javascript: void(0);' aria-expanded='true'><i class='mdi mdi-cash'></i>Ventas<span class='fa arrow'></span></a>
         <ul class='nav-second-level nav' aria-expanded='true'>
-            <li><a href='Agregar_Venta.php'><i class='mdi mdi-account-plus'></i> Realizar Venta</a></li>
-            <li><a href='Lista_Ventas.php'><i class='mdi mdi-account-settings-variant'></i> Listado De Ventas</a></li>
+            <li><a href='Agregar_Venta.php'><i class='mdi mdi-truck'></i> Realizar Venta</a></li>
+            <li><a href='Lista_Ventas.php'><i class='mdi mdi-truck-delivery'></i> Listado De Ventas</a></li>
         </ul>
     </li>
     <li>
@@ -43,7 +43,7 @@
     <li>
         <a href='javascript: void(0);' aria-expanded='true'><i class=' mdi mdi-history'></i>Actividades<span class='fa arrow'></span></a>
         <ul class='nav-second-level nav' aria-expanded='true'>
-            <li><a href='Calendario.php'><i class='mdi mdi-calendar'></i> Calendario De Eventos</a></li>
+            <li><a href='Calendari.php'><i class='mdi mdi-calendar'></i> Calendario De Eventos</a></li>
             <li><a href='timeline.php'><i class='mdi mdi-av-timer'></i> Historial De Eventos</a></li>
         </ul>
     </li>

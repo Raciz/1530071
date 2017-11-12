@@ -70,7 +70,6 @@
 
                                         <div class="form-group m-b-20">
                                             <div class="col-xs-12">
-                                                <a href="pages-forget-password.html" class="text-muted pull-right font-14">Olvidaste La Contraseña</a>
                                                 <label for="password">Contraseña</label>
                                                 <input class="form-control" type="password" name="password" required="" id="password" placeholder="Contraseña">
                                             </div>

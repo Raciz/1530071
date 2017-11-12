@@ -41,9 +41,9 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="">
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png" alt="logo" class="logo-lg" />
-                            <img src="assets/images/logo_sm.png" alt="logo" class="logo-sm hidden" />
+                        <a href="dashboard.php" class="logo">
+                            <img src="assets/images/SUKARNE.png" alt="logo" class="logo-lg" />
+                            <img src="assets/images/SUKARNE.png" alt="logo" class="logo-sm hidden" />
                         </a>
                     </div>
                 </div>
@@ -61,18 +61,17 @@
                                 <span class="clearfix"></span>
                             </div>
 
-
                             <!-- Top nav Right menu -->
                             <ul class="nav navbar-nav navbar-right top-navbar-items-right pull-right">
                                 <li class="hidden-xs">
                                     <form role="search" class="navbar-left app-search pull-left">
-                                        <input type="text" placeholder="Search..." class="form-control">
+                                        <input type="text" placeholder="Buscar" class="form-control">
                                         <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
                                 <li class="dropdown top-menu-item-xs">
                                     <a href="#" data-target="#" class="dropdown-toggle menu-right-item" data-toggle="dropdown" aria-expanded="true">
-                                        <i class="mdi mdi-bell"></i> <span class="label label-danger">3</span>
+                                        <i class="mdi mdi-bell"></i> <span class="label label-danger">1</span>
                                     </a>
                                     <ul class="dropdown-menu p-0 dropdown-menu-lg">
                                         <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
@@ -85,84 +84,9 @@
                                                             <em class="fa fa-diamond bg-primary"></em>
                                                         </div>
                                                         <div class="media-body">
-                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                            <h5 class="media-heading">Se Ha Registrado Una Nueva Compra</h5>
                                                             <p class="m-0">
-                                                                <small>There are new settings available</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                                <!-- list item-->
-                                                <a href="javascript:void(0);" class="list-group-item">
-                                                    <div class="media">
-                                                        <div class="media-left p-r-10">
-                                                            <em class="fa fa-cog bg-warning"></em>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5 class="media-heading">New settings</h5>
-                                                            <p class="m-0">
-                                                                <small>There are new settings available</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                                <!-- list item-->
-                                                <a href="javascript:void(0);" class="list-group-item">
-                                                    <div class="media">
-                                                        <div class="media-left p-r-10">
-                                                            <em class="fa fa-bell-o bg-custom"></em>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5 class="media-heading">Updates</h5>
-                                                            <p class="m-0">
-                                                                <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                                <!-- list item-->
-                                                <a href="javascript:void(0);" class="list-group-item">
-                                                    <div class="media">
-                                                        <div class="media-left p-r-10">
-                                                            <em class="fa fa-user-plus bg-danger"></em>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5 class="media-heading">New user registered</h5>
-                                                            <p class="m-0">
-                                                                <small>You have 10 unread messages</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                                <!-- list item-->
-                                                <a href="javascript:void(0);" class="list-group-item">
-                                                    <div class="media">
-                                                        <div class="media-left p-r-10">
-                                                            <em class="fa fa-diamond bg-primary"></em>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                            <p class="m-0">
-                                                                <small>There are new settings available</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                                <!-- list item-->
-                                                <a href="javascript:void(0);" class="list-group-item">
-                                                    <div class="media">
-                                                        <div class="media-left p-r-10">
-                                                            <em class="fa fa-cog bg-warning"></em>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5 class="media-heading">New settings</h5>
-                                                            <p class="m-0">
-                                                                <small>There are new settings available</small>
+                                                                <small>Clic Para Visualizarla</small>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -229,7 +153,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4 class="header-title m-t-0">Calendar</h4>
+                                <h4 class="header-title m-t-0">Calendario</h4>
                             </div>
                         </div> <!-- end row -->
 
@@ -242,33 +166,24 @@
                                             <div class="row">
                                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                                     <a href="#" data-toggle="modal" data-target="#add-category" class="m-t-10 btn btn-lg btn-primary btn-block waves-effect m-t-20 waves-light">
-                                                        <i class="fa fa-plus"></i> Create New
+                                                        <i class="fa fa-plus"></i> Nuevo Evento
                                                     </a>
                                                     <div id="external-events" class="m-t-20">
                                                         <br>
-                                                        <p class="text-muted">Drag and drop your event or click in the calendar</p>
+                                                        <p class="text-muted">Toma y Arrastras Tu Evento Al Calendario </p>
                                                         <div class="external-event bg-success" data-class="bg-success">
-                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>New Theme Release
+                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Entrega De Productos
                                                         </div>
                                                         <div class="external-event bg-info" data-class="bg-info">
-                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>My Event
+                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Mi Evento
                                                         </div>
                                                         <div class="external-event bg-warning" data-class="bg-warning">
-                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Meet manager
+                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Reunion Con El Jefe
                                                         </div>
                                                         <div class="external-event bg-primary" data-class="bg-primary">
-                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Create New theme
+                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Nuevo Tema
                                                         </div>
                                                     </div>
-
-                                                    <!-- checkbox -->
-                                                    <div class="checkbox checkbox-custom m-t-30">
-                                                        <input id="drop-remove" type="checkbox">
-                                                        <label for="drop-remove">
-                                                            Remove after drop
-                                                        </label>
-                                                    </div>
-
                                                 </div>
                                             </div>
                                         </div> <!-- end col-->
@@ -284,13 +199,13 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title">Add New Event</h4>
+                                                <h4 class="modal-title">Agregar Nuevo Evento</h4>
                                             </div>
                                             <div class="modal-body p-20"></div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Crear Evento</button>
+                                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Borrar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -302,17 +217,17 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title">Add a category</h4>
+                                                <h4 class="modal-title">Agregar Categoria</h4>
                                             </div>
                                             <div class="modal-body p-20">
                                                 <form role="form">
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <label class="control-label">Category Name</label>
+                                                            <label class="control-label">Nombre De Categoria</label>
                                                             <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name"/>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label class="control-label">Choose Category Color</label>
+                                                            <label class="control-label">Elegir Color De Categoria</label>
                                                             <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
                                                                 <option value="success">Success</option>
                                                                 <option value="danger">Danger</option>
@@ -325,8 +240,8 @@
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Guardar</button>
                                             </div>
                                         </div>
                                     </div>

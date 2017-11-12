@@ -51,7 +51,7 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="">
-                        <a href="index.html" class="logo">
+                        <a href="dashboard.php" class="logo">
                             <img src="assets/images/SUKARNE.png" alt="logo" class="logo-lg" />
                             <img src="assets/images/SUKARNE.png" alt="logo" class="logo-sm hidden" />
                         </a>
@@ -75,13 +75,13 @@
                             <ul class="nav navbar-nav navbar-right top-navbar-items-right pull-right">
                                 <li class="hidden-xs">
                                     <form role="search" class="navbar-left app-search pull-left">
-                                        <input type="text" placeholder="Search..." class="form-control">
+                                        <input type="text" placeholder="Buscar" class="form-control">
                                         <a href=""><i class="fa fa-search"></i></a>
                                     </form>
                                 </li>
                                 <li class="dropdown top-menu-item-xs">
                                     <a href="#" data-target="#" class="dropdown-toggle menu-right-item" data-toggle="dropdown" aria-expanded="true">
-                                        <i class="mdi mdi-bell"></i> <span class="label label-danger">3</span>
+                                        <i class="mdi mdi-bell"></i> <span class="label label-danger">1</span>
                                     </a>
                                     <ul class="dropdown-menu p-0 dropdown-menu-lg">
                                         <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
@@ -94,84 +94,9 @@
                                                             <em class="fa fa-diamond bg-primary"></em>
                                                         </div>
                                                         <div class="media-body">
-                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                            <h5 class="media-heading">Se Ha Registrado Una Nueva Compra</h5>
                                                             <p class="m-0">
-                                                                <small>There are new settings available</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                                <!-- list item-->
-                                                <a href="javascript:void(0);" class="list-group-item">
-                                                    <div class="media">
-                                                        <div class="media-left p-r-10">
-                                                            <em class="fa fa-cog bg-warning"></em>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5 class="media-heading">New settings</h5>
-                                                            <p class="m-0">
-                                                                <small>There are new settings available</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                                <!-- list item-->
-                                                <a href="javascript:void(0);" class="list-group-item">
-                                                    <div class="media">
-                                                        <div class="media-left p-r-10">
-                                                            <em class="fa fa-bell-o bg-custom"></em>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5 class="media-heading">Updates</h5>
-                                                            <p class="m-0">
-                                                                <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                                <!-- list item-->
-                                                <a href="javascript:void(0);" class="list-group-item">
-                                                    <div class="media">
-                                                        <div class="media-left p-r-10">
-                                                            <em class="fa fa-user-plus bg-danger"></em>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5 class="media-heading">New user registered</h5>
-                                                            <p class="m-0">
-                                                                <small>You have 10 unread messages</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                                <!-- list item-->
-                                                <a href="javascript:void(0);" class="list-group-item">
-                                                    <div class="media">
-                                                        <div class="media-left p-r-10">
-                                                            <em class="fa fa-diamond bg-primary"></em>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                            <p class="m-0">
-                                                                <small>There are new settings available</small>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-
-                                                <!-- list item-->
-                                                <a href="javascript:void(0);" class="list-group-item">
-                                                    <div class="media">
-                                                        <div class="media-left p-r-10">
-                                                            <em class="fa fa-cog bg-warning"></em>
-                                                        </div>
-                                                        <div class="media-body">
-                                                            <h5 class="media-heading">New settings</h5>
-                                                            <p class="m-0">
-                                                                <small>There are new settings available</small>
+                                                                <small>Clic Para Visualizarla</small>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -242,7 +167,7 @@
 
                             <h4 class="header-title m-t-0">Agregar Empleado</h4>
 
-                            <form action="PHP/nuevoEmpleado.php" method="post" class="form-validation">
+                            <form action="PHP/nuevoEmpleado.php" autocomplete="off" method="post" class="form-validation">
                                 <div class="form-group">
                                     <label for="userName">Usuario<span class="text-danger">*</span></label>
                                     <input type="text" name="usuario" parsley-trigger="change" required
@@ -290,8 +215,17 @@
                                         </div><!-- input-group -->
                                     </div>
                                 </div>
+                                
                                 <div class="form-group">
-                                    <label>Hora De Entrada</label>
+                                    <label for="webSite">Tipo De Empleado<span class="text-danger">*</span></label>
+                                    <select class="form-control select2" name="tipo">
+                                        <option value="ADMIN">Administrador</option>
+                                        <option value="EMP">Empleado</option>
+                                    </select>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label>Hora De Entrada<span class="text-danger">*</span></label>
                                     <div class="input-group clockpicker" data-placement="top" data-align="top">
                                         <input type="text" class="form-control" required placeholder="Ingrese Hora De Entrada" name="entrada">
                                         <span class="input-group-addon"> <span class="mdi mdi-clock"></span> </span>
