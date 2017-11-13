@@ -140,286 +140,314 @@
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+
+                                    <img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>
+
                                 </div>
                                 <div class="user-info">
-                                    <a href="#">Stanley Jones</a>
-                                    <p class="text-muted m-0">Administrator</p>
+                                    <?php
+                                    include 'PHP/conexion.php';
+
+                                    $user = $_SESSION['username'];
+
+                                    $_sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona WHERE c.usuario = '$user'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error datos persona Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    ?>
+
+                                    <a href='#'><?php echo $_row['nombre'];?></a>
+
+                                    <?php    
+                                    $id = $_row['id_persona'];
+                                    $_sql = "SELECT COUNT(*) Nrow FROM administrador WHERE id_admin = '$id'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error tipo empleado Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    if($_row['Nrow'] > 0)
+                                    {
+                                        echo "<p class='text-muted m-0'>Administrator</p>";
+                                    }
+                                    else
+                                    {
+                                        echo "<p class='text-muted m-0'>Empleado</p>";
+                                    }   
+
+                                    ?>
                                 </div>
+                                <!--- End User Detail box -->
+
+                                <!-- Left Menu Start -->
+                                <?php
+                                include 'PHP/menu.php';
+                                ?>
                             </div>
-                            <!--- End User Detail box -->
+                        </div><!--Scrollbar wrapper-->
+                        </aside>
+                    <!--left navigation end-->
 
-                            <!-- Left Menu Start -->
-                            <?php
-                            include 'PHP/menu.php';
-                            ?>
-                        </div>
-                    </div><!--Scrollbar wrapper-->
-                </aside>
-                <!--left navigation end-->
+                    <!-- START PAGE CONTENT -->
+                    <div id="page-right-content">
 
-                <!-- START PAGE CONTENT -->
-                <div id="page-right-content">
+                        <div class="container">
+                            <h4 class="header-title m-t-0">Registro De Ventas</h4>
+                            <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#accordion-modal"><strong>Ayuda</strong></button>
 
-                    <div class="container">
-                        <h4 class="header-title m-t-0">Registro De Ventas</h4>
-                        <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#accordion-modal"><strong>Ayuda</strong></button>
+                            <div id="accordion-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content p-0">
+                                        <div class="panel-group panel-group-joined" id="accordion-test">
 
-                        <div id="accordion-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                            <div class="modal-dialog">
-                                <div class="modal-content p-0">
-                                    <div class="panel-group panel-group-joined" id="accordion-test">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" data-parent="#accordion-test" href="#collapseThree" class="collapsed" aria-expanded="false">
+                                                            <strong>Ayuda - Venta Local</strong>
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                                    <div class="panel-body">
+                                                        <p>Una Venta Local es una venta realizada en la tienda donde el cliente obtiene los productos inmediatamente</p>
+                                                        <p>Para registrar una Compra Local se necesita:
+                                                            <br>
+                                                        <ul>
+                                                            <li>El Nombre Del Cliente</li>
+                                                            <li>El nombre y precio de todos los articulos que el cliente comprara</li>
+                                                            <li>El total a pagar por la compra</li>
+                                                        </ul>
+                                                        </p>
+
+                                                    <p>En el primer campo de texto ingrese el nombre del cliente</p>
+                                                    <p></p>
+                                                    <p>En el siguiente campo de texto debe ingresar la cantidad el nombre y el precio de los productos que el cliente va a comprar</p>
+                                                    <p>Por ultimo ingrese la cantidad de dinero a pagar por el clientes por los productos a comprar en el ultimo campo de texto</p>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
                                                 <h4 class="panel-title">
-                                                    <a data-toggle="collapse" data-parent="#accordion-test" href="#collapseThree" class="collapsed" aria-expanded="false">
-                                                        <strong>Ayuda - Venta Local</strong>
+                                                    <a data-toggle="collapse" data-parent="#accordion-test" href="#collapseTwo" aria-expanded="false" class="collapsed">
+                                                        <strong>Ayuda - Venta A Domicilio</strong>
                                                     </a>
                                                 </h4>
                                             </div>
-                                            <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                            <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                                 <div class="panel-body">
-                                                    <p>Una Venta Local es una venta realizada en la tienda donde el cliente obtiene los productos inmediatamente</p>
-                                                    <p>Para registrar una Compra Local se necesita:
+                                                    <p>Una Venta A Domicilio es una venta la cual el cliente realiza, ya sea via internet o telefonica, los productos que desee comprar y la direccion en que seran mandados dichos porductos</p>
+                                                    <p>Para registrar una Compra A Domicilio se necesita:
                                                         <br>
                                                     <ul>
                                                         <li>El Nombre Del Cliente</li>
+                                                        <li>La direccion y codigo postal del lugar en que se entregaran los productos solicitados</li>
+                                                        <li>Una referencia para ubicar mas facilmente en lugar de entrega</li>
                                                         <li>El nombre y precio de todos los articulos que el cliente comprara</li>
                                                         <li>El total a pagar por la compra</li>
                                                     </ul>
                                                     </p>
 
                                                 <p>En el primer campo de texto ingrese el nombre del cliente</p>
-                                                <p></p>
+                                                <p>En los siguientes 3 campos de texto se debe de ingresar la direccion, el codigo postal y la referencia del lugar de envio en este mismo orden</p>
                                                 <p>En el siguiente campo de texto debe ingresar la cantidad el nombre y el precio de los productos que el cliente va a comprar</p>
                                                 <p>Por ultimo ingrese la cantidad de dinero a pagar por el clientes por los productos a comprar en el ultimo campo de texto</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion-test" href="#collapseTwo" aria-expanded="false" class="collapsed">
-                                                    <strong>Ayuda - Venta A Domicilio</strong>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                                            <div class="panel-body">
-                                                <p>Una Venta A Domicilio es una venta la cual el cliente realiza, ya sea via internet o telefonica, los productos que desee comprar y la direccion en que seran mandados dichos porductos</p>
-                                                <p>Para registrar una Compra A Domicilio se necesita:
-                                                    <br>
-                                                <ul>
-                                                    <li>El Nombre Del Cliente</li>
-                                                    <li>La direccion y codigo postal del lugar en que se entregaran los productos solicitados</li>
-                                                    <li>Una referencia para ubicar mas facilmente en lugar de entrega</li>
-                                                    <li>El nombre y precio de todos los articulos que el cliente comprara</li>
-                                                    <li>El total a pagar por la compra</li>
-                                                </ul>
-                                                </p>
-
-                                            <p>En el primer campo de texto ingrese el nombre del cliente</p>
-                                            <p>En los siguientes 3 campos de texto se debe de ingresar la direccion, el codigo postal y la referencia del lugar de envio en este mismo orden</p>
-                                            <p>En el siguiente campo de texto debe ingresar la cantidad el nombre y el precio de los productos que el cliente va a comprar</p>
-                                            <p>Por ultimo ingrese la cantidad de dinero a pagar por el clientes por los productos a comprar en el ultimo campo de texto</p>
-                                        </div>
-                                    </div>
                                 </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div>
 
+                    <div class="m-t-30">
+                        <ul class="nav nav-tabs navtab-bg nav-justified">
+                            <li class="active">
+                                <a href="#local" data-toggle="tab" aria-expanded="true">
+                                    Venta Local
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#domicilio" data-toggle="tab" aria-expanded="false">
+                                    Venta a Domicilio
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="local">
+                                <div class="col-lg-20">
+                                    <div class="p-20 m-b-20">
+
+
+                                        <h4 class="header-title m-t-0">Venta Local</h4>
+                                        <div class="p-20 m-b-20">
+                                            <form role="form" class="form-validation" autocomplete="off" action="Lista_Ventas.php" method="post">
+
+                                                <div class="form-group row">
+                                                    <label for="hori-pass1" class="col-sm-4 form-control-label">Nombre Del Comprador<span class="text-danger"></span></label>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" placeholder="Ingrese Nombre del Comprador" name="direccion" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="p-20 m-b-20">
+                                                            <h4 class="m-b-30 m-t-0 header-title">Descripcion</h4>
+                                                            <textarea name="descripcion" class="summernote" placeholder="Ingrese Descripcion">
+
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="webSite" class="col-sm-4 form-control-label">Costo Total<span class="text-danger">*</span></label>
+                                                    <div class="col-sm-7">
+                                                        <input class="form-control" name="telefono" placeholder="Ingrese Total a Pagar" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group text-center m-b-0">
+                                                    <button class="btn btn-success btn-bordered btn-lg" type="submit">
+                                                        Aceptar
+                                                    </button>
+                                                    <button type="reset" class="btn btn-danger btn-bordered btn-lg">
+                                                        Limpiar
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>       
                             </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div>
-
-                <div class="m-t-30">
-                    <ul class="nav nav-tabs navtab-bg nav-justified">
-                        <li class="active">
-                            <a href="#local" data-toggle="tab" aria-expanded="true">
-                                Venta Local
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#domicilio" data-toggle="tab" aria-expanded="false">
-                                Venta a Domicilio
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="local">
-                            <div class="col-lg-20">
-                                <div class="p-20 m-b-20">
-
-
-                                    <h4 class="header-title m-t-0">Venta Local</h4>
+                            <div class="tab-pane" id="domicilio">
+                                <div class="col-lg-20">
                                     <div class="p-20 m-b-20">
-                                        <form role="form" class="form-validation" autocomplete="off" action="Lista_Ventas.php" method="post">
 
-                                            <div class="form-group row">
-                                                <label for="hori-pass1" class="col-sm-4 form-control-label">Nombre Del Comprador<span class="text-danger"></span></label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" placeholder="Ingrese Nombre del Comprador" name="direccion" class="form-control">
-                                                </div>
-                                            </div>
 
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="p-20 m-b-20">
-                                                        <h4 class="m-b-30 m-t-0 header-title">Descripcion</h4>
-                                                        <textarea name="descripcion" class="summernote" placeholder="Ingrese Descripcion">
+                                        <h4 class="header-title m-t-0">Venta A Domicilio</h4>
+                                        <div class="p-20 m-b-20">
+                                            <form role="form" class="form-validation" autocomplete="off" action="Lista_Ventas.php" method="post">
 
-                                                        </textarea>
+                                                <div class="form-group row">
+                                                    <label for="hori-pass1" class="col-sm-4 form-control-label">Nombre Del Comprador<span class="text-danger"></span></label>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" placeholder="Ingrese Nombre del Comprador" name="direccion" class="form-control" required>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group row">
-                                                <label for="webSite" class="col-sm-4 form-control-label">Costo Total<span class="text-danger">*</span></label>
-                                                <div class="col-sm-7">
-                                                    <input class="form-control" name="telefono" placeholder="Ingrese Total a Pagar" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group text-center m-b-0">
-                                                <button class="btn btn-success btn-bordered btn-lg" type="submit">
-                                                    Aceptar
-                                                </button>
-                                                <button type="reset" class="btn btn-danger btn-bordered btn-lg">
-                                                    Limpiar
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>       
-                        </div>
-                        <div class="tab-pane" id="domicilio">
-                            <div class="col-lg-20">
-                                <div class="p-20 m-b-20">
-
-
-                                    <h4 class="header-title m-t-0">Venta A Domicilio</h4>
-                                    <div class="p-20 m-b-20">
-                                        <form role="form" class="form-validation" autocomplete="off" action="Lista_Ventas.php" method="post">
-
-                                            <div class="form-group row">
-                                                <label for="hori-pass1" class="col-sm-4 form-control-label">Nombre Del Comprador<span class="text-danger"></span></label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" placeholder="Ingrese Nombre del Comprador" name="direccion" class="form-control" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label for="hori-pass1" class="col-sm-4 form-control-label">Direccion<span class="text-danger"></span></label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" placeholder="Ingrese Direccion" name="direccion" class="form-control" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label for="hori-pass1" class="col-sm-4 form-control-label">Codigo Postal<span class="text-danger"></span></label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" placeholder="Ingrese Codigo Postal" name="direccion" class="form-control" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label for="hori-pass1" class="col-sm-4 form-control-label">Referencia<span class="text-danger"></span></label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" placeholder="Ingrese Referencia De Envio" name="direccion" class="form-control" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="p-20 m-b-20">
-                                                        <h4 class="m-b-30 m-t-0 header-title">Descripcion</h4>
-                                                        <textarea name="descripcion" class="summernote" placeholder="Ingrese Descripcion" required>
-
-                                                        </textarea>
+                                                <div class="form-group row">
+                                                    <label for="hori-pass1" class="col-sm-4 form-control-label">Direccion<span class="text-danger"></span></label>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" placeholder="Ingrese Direccion" name="direccion" class="form-control" required>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group row">
-                                                <label for="webSite" class="col-sm-4 form-control-label">Costo Total<span class="text-danger">*</span></label>
-                                                <div class="col-sm-7">
-                                                    <input class="form-control" name="telefono" placeholder="Ingrese Total a Pagar" required>
+                                                <div class="form-group row">
+                                                    <label for="hori-pass1" class="col-sm-4 form-control-label">Codigo Postal<span class="text-danger"></span></label>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" placeholder="Ingrese Codigo Postal" name="direccion" class="form-control" required>
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="form-group text-center m-b-0">
-                                                <button class="btn btn-success btn-bordered btn-lg" type="submit">
-                                                    Aceptar
-                                                </button>
-                                                <button type="reset" class="btn btn-danger btn-bordered btn-lg">
-                                                    Limpiar
-                                                </button>
-                                            </div>
-                                        </form>
+                                                <div class="form-group row">
+                                                    <label for="hori-pass1" class="col-sm-4 form-control-label">Referencia<span class="text-danger"></span></label>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" placeholder="Ingrese Referencia De Envio" name="direccion" class="form-control" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="p-20 m-b-20">
+                                                            <h4 class="m-b-30 m-t-0 header-title">Descripcion</h4>
+                                                            <textarea name="descripcion" class="summernote" placeholder="Ingrese Descripcion" required>
+
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="webSite" class="col-sm-4 form-control-label">Costo Total<span class="text-danger">*</span></label>
+                                                    <div class="col-sm-7">
+                                                        <input class="form-control" name="telefono" placeholder="Ingrese Total a Pagar" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group text-center m-b-0">
+                                                    <button class="btn btn-success btn-bordered btn-lg" type="submit">
+                                                        Aceptar
+                                                    </button>
+                                                    <button type="reset" class="btn btn-danger btn-bordered btn-lg">
+                                                        Limpiar
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-                            </div> 
+                                </div> 
+                            </div>
                         </div>
                     </div>
-                </div>
+                    </div>
+                <!-- end container -->
+
+                <div class="footer">
+                    <div>
+                        <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
+                    </div>
+                </div> <!-- end footer -->
+
             </div>
-            <!-- end container -->
-
-            <div class="footer">
-                <div>
-                    <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
-                </div>
-            </div> <!-- end footer -->
+            <!-- End #page-right-content -->
 
         </div>
-        <!-- End #page-right-content -->
-
+        <!-- end .page-contentbar -->
         </div>
-    <!-- end .page-contentbar -->
-    </div>
-<!-- End #page-wrapper -->
+    <!-- End #page-wrapper -->
 
 
 
-<!-- js placed at the end of the document so the pages load faster -->
-<script src="assets/js/jquery-2.1.4.min.js"></script>
-<script src="assets/js/metisMenu.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.slimscroll.min.js"></script>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-<script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
-<script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
-<script src="assets/plugins/switchery/switchery.min.js"></script>
-<script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
+    <script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+    <script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/switchery/switchery.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
 
-<script src="assets/plugins/moment/moment.js"></script>
-<script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
-<script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-<script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
-<script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-<script src="assets/plugins/summernote/summernote.min.js"></script>
+    <script src="assets/plugins/moment/moment.js"></script>
+    <script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
+    <script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+    <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="assets/plugins/summernote/summernote.min.js"></script>
 
-<!-- form advanced init js -->
-<script src="assets/pages/jquery.form-advanced.init.js"></script>
+    <!-- form advanced init js -->
+    <script src="assets/pages/jquery.form-advanced.init.js"></script>
 
-<!-- App Js -->
-<script src="assets/js/jquery.app.js"></script>
+    <!-- App Js -->
+    <script src="assets/js/jquery.app.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.form-validation').parsley();
-        $('.summernote').summernote({
-            height: 350,                 // set editor height
-            minHeight: null,             // set minimum height of editor
-            maxHeight: null,             // set maximum height of editor
-            focus: false                 // set focus to editable area after initializing summernote
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.form-validation').parsley();
+            $('.summernote').summernote({
+                height: 350,                 // set editor height
+                minHeight: null,             // set minimum height of editor
+                maxHeight: null,             // set maximum height of editor
+                focus: false                 // set focus to editable area after initializing summernote
+            });
         });
-    });
-</script>
-</body>
+    </script>
+    </body>
 </html>

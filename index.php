@@ -75,17 +75,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group m-b-30">
-                                            <div class="col-xs-12">
-                                                <div class="checkbox checkbox-primary">
-                                                    <input id="checkbox5" type="checkbox">
-                                                    <label for="checkbox5">
-                                                        Recordar
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         <div class="form-group account-btn text-center m-t-10">
                                             <div class="col-xs-12">
                                                 <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesion</button>

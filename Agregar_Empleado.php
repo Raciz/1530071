@@ -139,170 +139,196 @@
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <?php
-                                    echo "<img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>";
-                                    ?>
+
+                                    <img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>
+
                                 </div>
                                 <div class="user-info">
-                                    <a href="#">Stanley Jones</a>
-                                    <p class="text-muted m-0">Administrator</p>
+                                    <?php
+                                    include 'PHP/conexion.php';
+
+                                    $user = $_SESSION['username'];
+
+                                    $_sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona WHERE c.usuario = '$user'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error datos persona Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    ?>
+
+                                    <a href='#'><?php echo $_row['nombre'];?></a>
+
+                                    <?php    
+                                    $id = $_row['id_persona'];
+                                    $_sql = "SELECT COUNT(*) Nrow FROM administrador WHERE id_admin = '$id'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error tipo empleado Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    if($_row['Nrow'] > 0)
+                                    {
+                                        echo "<p class='text-muted m-0'>Administrator</p>";
+                                    }
+                                    else
+                                    {
+                                        echo "<p class='text-muted m-0'>Empleado</p>";
+                                    }   
+
+                                    ?>
                                 </div>
+                                <!--- End User Detail box -->
+
+                                <!-- Left Menu Start -->
+                                <?php
+                                include 'PHP/menu.php';
+                                ?>
                             </div>
-                            <!--- End User Detail box -->
+                        </div><!--Scrollbar wrapper-->
+                        </aside>
+                    <!--left navigation end-->
 
-                            <!-- Left Menu Start -->
-                            <?php
-                            include 'PHP/menu.php';
-                            ?>
+                    <!-- START PAGE CONTENT -->
+                    <div id="page-right-content">
+
+                        <div class="col-lg-15">
+                            <div class="p-20 m-b-20">
+
+                                <h4 class="header-title m-t-0">Agregar Empleado</h4>
+
+                                <form action="PHP/nuevoEmpleado.php" autocomplete="off" method="post" class="form-validation">
+                                    <div class="form-group">
+                                        <label for="userName">Usuario<span class="text-danger">*</span></label>
+                                        <input type="text" name="usuario" parsley-trigger="change" required
+                                               placeholder="Ingresar Usuario" class="form-control" id="usuario">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="emailAddress">Correo<span class="text-danger">*</span></label>
+                                        <input type="email" name="email" parsley-trigger="change" required
+                                               placeholder="Ingresar Correo" class="form-control" id="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pass1">Contraseña<span class="text-danger">*</span></label>
+                                        <input id="pass1" type="password" name="pass1" placeholder="Ingresar Contraseña" required
+                                               class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passWord2">Repetir Contraseña<span class="text-danger">*</span></label>
+                                        <input data-parsley-equalto="#pass1" type="password" required
+                                               placeholder="Repetir Contraseña" class="form-control" id="passWord2">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="Name">Nombre<span class="text-danger">*</span></label>
+                                        <input type="text" name="nombre" parsley-trigger="change" required
+                                               placeholder="Ingrese Nombre" class="form-control" id="nombre">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="Name">Apellido Paterno<span class="text-danger">*</span></label>
+                                        <input type="text" name="AP" parsley-trigger="change" required
+                                               placeholder="Ingrese Apellido Materno" class="form-control" id="AP">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="Name">Apellido Materno<span class="text-danger"></span></label>
+                                        <input type="text" name="AM" parsley-trigger="change" placeholder="Ingrese Apellido Materno" class="form-control" id="AM">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Fecha De Nacimiento</label>
+                                        <div>
+                                            <div class="input-group">
+                                                <input type="text" name="fecha" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose">
+                                                <span class="input-group-addon bg-custom b-0"><i class="mdi mdi-calendar text-white"></i></span>
+                                            </div><!-- input-group -->
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="webSite">Tipo De Empleado<span class="text-danger">*</span></label>
+                                        <select class="form-control select2" name="tipo">
+                                            <option value="ADMIN">Administrador</option>
+                                            <option value="EMP">Empleado</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Hora De Entrada<span class="text-danger">*</span></label>
+                                        <div class="input-group clockpicker" data-placement="top" data-align="top">
+                                            <input type="text" class="form-control" required placeholder="Ingrese Hora De Entrada" name="entrada">
+                                            <span class="input-group-addon"> <span class="mdi mdi-clock"></span> </span>
+                                        </div>
+                                        <label>Hora De Salida</label>
+                                        <div class="input-group clockpicker" data-placement="top" data-align="top">
+                                            <input type="text" class="form-control" required placeholder="Ingrese Hora De Salida" name="salida">
+                                            <span class="input-group-addon"> <span class="mdi mdi-clock"></span> </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-center m-b-0">
+                                        <button class="btn btn-success btn-bordered btn-lg" type="submit">
+                                            Aceptar
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-bordered btn-lg">
+                                            Limpiar
+                                        </button>
+                                    </div>
+                                </form>
+
+
+                            </div>
                         </div>
-                    </div><!--Scrollbar wrapper-->
-                </aside>
-                <!--left navigation end-->
 
-                <!-- START PAGE CONTENT -->
-                <div id="page-right-content">
+                        <div class="footer">
+                            <div>
+                                <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
+                            </div>
+                        </div> <!-- end footer -->
 
-                    <div class="col-lg-15">
-                        <div class="p-20 m-b-20">
-
-                            <h4 class="header-title m-t-0">Agregar Empleado</h4>
-
-                            <form action="PHP/nuevoEmpleado.php" autocomplete="off" method="post" class="form-validation">
-                                <div class="form-group">
-                                    <label for="userName">Usuario<span class="text-danger">*</span></label>
-                                    <input type="text" name="usuario" parsley-trigger="change" required
-                                           placeholder="Ingresar Usuario" class="form-control" id="usuario">
-                                </div>
-                                <div class="form-group">
-                                    <label for="emailAddress">Correo<span class="text-danger">*</span></label>
-                                    <input type="email" name="email" parsley-trigger="change" required
-                                           placeholder="Ingresar Correo" class="form-control" id="email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="pass1">Contraseña<span class="text-danger">*</span></label>
-                                    <input id="pass1" type="password" name="pass1" placeholder="Ingresar Contraseña" required
-                                           class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="passWord2">Repetir Contraseña<span class="text-danger">*</span></label>
-                                    <input data-parsley-equalto="#pass1" type="password" required
-                                           placeholder="Repetir Contraseña" class="form-control" id="passWord2">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="Name">Nombre<span class="text-danger">*</span></label>
-                                    <input type="text" name="nombre" parsley-trigger="change" required
-                                           placeholder="Ingrese Nombre" class="form-control" id="nombre">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="Name">Apellido Paterno<span class="text-danger">*</span></label>
-                                    <input type="text" name="AP" parsley-trigger="change" required
-                                           placeholder="Ingrese Apellido Materno" class="form-control" id="AP">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="Name">Apellido Materno<span class="text-danger"></span></label>
-                                    <input type="text" name="AM" parsley-trigger="change" placeholder="Ingrese Apellido Materno" class="form-control" id="AM">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Fecha De Nacimiento</label>
-                                    <div>
-                                        <div class="input-group">
-                                            <input type="text" name="fecha" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose">
-                                            <span class="input-group-addon bg-custom b-0"><i class="mdi mdi-calendar text-white"></i></span>
-                                        </div><!-- input-group -->
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="webSite">Tipo De Empleado<span class="text-danger">*</span></label>
-                                    <select class="form-control select2" name="tipo">
-                                        <option value="ADMIN">Administrador</option>
-                                        <option value="EMP">Empleado</option>
-                                    </select>
-                                </div>
-                    
-                                <div class="form-group">
-                                    <label>Hora De Entrada<span class="text-danger">*</span></label>
-                                    <div class="input-group clockpicker" data-placement="top" data-align="top">
-                                        <input type="text" class="form-control" required placeholder="Ingrese Hora De Entrada" name="entrada">
-                                        <span class="input-group-addon"> <span class="mdi mdi-clock"></span> </span>
-                                    </div>
-                                    <label>Hora De Salida</label>
-                                    <div class="input-group clockpicker" data-placement="top" data-align="top">
-                                        <input type="text" class="form-control" required placeholder="Ingrese Hora De Salida" name="salida">
-                                        <span class="input-group-addon"> <span class="mdi mdi-clock"></span> </span>
-                                    </div>
-                                </div>
-                                <div class="form-group text-center m-b-0">
-                                    <button class="btn btn-success btn-bordered btn-lg" type="submit">
-                                        Aceptar
-                                    </button>
-                                    <button type="reset" class="btn btn-danger btn-bordered btn-lg">
-                                        Limpiar
-                                    </button>
-                                </div>
-                            </form>
-
-
-                        </div>
                     </div>
+                    <!-- End #page-right-content -->
 
-                    <div class="footer">
-                        <div>
-                            <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
-                        </div>
-                    </div> <!-- end footer -->
-
-                </div>
-                <!-- End #page-right-content -->
-
+                    </div>
+                <!-- end .page-contentbar -->
             </div>
-            <!-- end .page-contentbar -->
-        </div>
-        <!-- End #page-wrapper -->
+            <!-- End #page-wrapper -->
 
 
 
-        <!-- js placed at the end of the document so the pages load faster -->
-        <script src="assets/js/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
+            <!-- js placed at the end of the document so the pages load faster -->
+            <script src="assets/js/jquery-2.1.4.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/metisMenu.min.js"></script>
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
-        <script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/switchery/switchery.min.js"></script>
-        <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
+            <script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+            <script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+            <script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+            <script src="assets/plugins/switchery/switchery.min.js"></script>
+            <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
 
-        <script src="assets/plugins/moment/moment.js"></script>
-        <script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
-        <script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-        <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-        <script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
-        <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-        <script src="assets/plugins/summernote/summernote.min.js"></script>
+            <script src="assets/plugins/moment/moment.js"></script>
+            <script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
+            <script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+            <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+            <script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+            <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+            <script src="assets/plugins/summernote/summernote.min.js"></script>
 
-        <!-- form advanced init js -->
-        <script src="assets/pages/jquery.form-advanced.init.js"></script>
+            <!-- form advanced init js -->
+            <script src="assets/pages/jquery.form-advanced.init.js"></script>
 
-        <!-- App Js -->
-        <script src="assets/js/jquery.app.js"></script>
+            <!-- App Js -->
+            <script src="assets/js/jquery.app.js"></script>
 
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('.form-validation').parsley();
-                $('.summernote').summernote({
-                    height: 350,                 // set editor height
-                    minHeight: null,             // set minimum height of editor
-                    maxHeight: null,             // set maximum height of editor
-                    focus: false                 // set focus to editable area after initializing summernote
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('.form-validation').parsley();
+                    $('.summernote').summernote({
+                        height: 350,                 // set editor height
+                        minHeight: null,             // set minimum height of editor
+                        maxHeight: null,             // set maximum height of editor
+                        focus: false                 // set focus to editable area after initializing summernote
+                    });
                 });
-            });
-        </script>
+            </script>
 
-    </body>
-</html>
+            </body>
+        </html>

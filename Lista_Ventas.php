@@ -135,136 +135,164 @@
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+
+                                    <img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>
+
                                 </div>
                                 <div class="user-info">
-                                    <a href="#">Stanley Jones</a>
-                                    <p class="text-muted m-0">Administrator</p>
+                                    <?php
+                                    include 'PHP/conexion.php';
+
+                                    $user = $_SESSION['username'];
+
+                                    $_sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona WHERE c.usuario = '$user'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error datos persona Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    ?>
+
+                                    <a href='#'><?php echo $_row['nombre'];?></a>
+
+                                    <?php    
+                                    $id = $_row['id_persona'];
+                                    $_sql = "SELECT COUNT(*) Nrow FROM administrador WHERE id_admin = '$id'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error tipo empleado Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    if($_row['Nrow'] > 0)
+                                    {
+                                        echo "<p class='text-muted m-0'>Administrator</p>";
+                                    }
+                                    else
+                                    {
+                                        echo "<p class='text-muted m-0'>Empleado</p>";
+                                    }   
+
+                                    ?>
                                 </div>
+                                <!--- End User Detail box -->
+
+                                <!-- Left Menu Start -->
+                                <?php
+                                include 'PHP/menu.php';
+                                ?>
                             </div>
-                            <!--- End User Detail box -->
+                        </div><!--Scrollbar wrapper-->
+                        </aside>
+                    <!--left navigation end-->
 
-                            <!-- Left Menu Start -->
-                            <?php
-                            include 'PHP/menu.php';
-                            ?>
+                    <!-- START PAGE CONTENT -->
+                    <div id="page-right-content">
+
+                        <div class="container">
+                            <div class="m-b-20 table-responsive">
+
+                                <h3>Listado De Ventas</h3>
+                                <br>
+
+                                <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;">
+                                    <thead>
+                                        <tr role="row">
+
+                                            <th class="sorting_asc" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-sort="ascending" aria-label="First name: activate to sort column descending" style="width: 33%;">Nombre Del Cliente</th>
+
+                                            <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Last name: activate to sort column ascending" style="width: 33%;">Total A Pagar</th>
+
+                                            <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 33%; display: none;">Tipo De Venta</th>
+
+                                            <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 20%; display: none;">Direccion</th>
+
+                                            <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="E-mail: activate to sort column ascending" style="width: 20px; display: none;">Descripcion de Compra</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1" tabindex="0">Jessica Arredondo Luna</td>
+                                            <td>$ 750</td>
+                                            <td style="display: none;">Local</td>
+                                            <td style="display: none;">-</td>
+                                            <td style="display: none;"><br>10   paquete de salchichas para asar     $70<br>1    Sazonador Con Ajo   $ 50</td>
+                                        </tr>
+
+                                        <tr role="row" class="even">
+
+                                            <td class="sorting_1" tabindex="0">Angelica Garcia Perez</td>
+                                            <td>$ 100</td>
+                                            <td style="display: none;">Local</td>
+                                            <td style="display: none;">-</td>
+
+                                            <td style="display: none;"><br>2    paquete de pierna y muslo de pollo  $ 50</td>
+                                        </tr>
+
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1" tabindex="0">Josue Sanches Torres</td>
+                                            <td>$ 1000 </td>
+                                            <td style="display: none;">A Domicilio</td>
+                                            <td style="display: none;">Col. Las Americas, CP: 87000, Referencia: Enfrente de la Iglesia</td>
+                                            <td style="display: none;"><br>5    Kilo de pollo para asar preparado   $ 150 <br>5 paquete de Salchichon   $ 50</td>
+                                        </tr>
+
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1" tabindex="0">Ricardo Hernadez Garcia</td>
+                                            <td>$ 1500</td>
+                                            <td style="display: none;">A Domicilio</td>
+                                            <td style="display: none;">Col La Moderna, CP: 87123, Referencia: Entre una vulcanizadora y una casa con porton negro</td>
+                                            <td style="display: none;"><br>5     kilo de Carne comercial    $ 70 <br>3    Kilo de pollo para asar preparado   $ 150<br>5   paquete de salchichas para asar     $70<br>5     paquete de carne deshebrada     $ 60<br>1    Sazonador Con Ajo   $ 50</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- end row -->
+
                         </div>
-                    </div><!--Scrollbar wrapper-->
-                </aside>
-                <!--left navigation end-->
+                        <!-- end container -->
 
-                <!-- START PAGE CONTENT -->
-                <div id="page-right-content">
+                        <div class="footer">
 
-                    <div class="container">
-                        <div class="m-b-20 table-responsive">
-
-                            <h3>Listado De Ventas</h3>
-                            <br>
-                        
-                            <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;">
-                                <thead>
-                                    <tr role="row">
-
-                                        <th class="sorting_asc" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-sort="ascending" aria-label="First name: activate to sort column descending" style="width: 33%;">Nombre Del Cliente</th>
-
-                                        <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Last name: activate to sort column ascending" style="width: 33%;">Total A Pagar</th>
-
-                                        <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 33%; display: none;">Tipo De Venta</th>
-
-                                        <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 20%; display: none;">Direccion</th>
-                                        
-                                        <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" aria-label="E-mail: activate to sort column ascending" style="width: 20px; display: none;">Descripcion de Compra</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1" tabindex="0">Jessica Arredondo Luna</td>
-                                        <td>$ 750</td>
-                                        <td style="display: none;">Local</td>
-                                        <td style="display: none;">-</td>
-                                    <td style="display: none;"><br>10   paquete de salchichas para asar     $70<br>1    Sazonador Con Ajo   $ 50</td>
-                                    </tr>
-
-                                    <tr role="row" class="even">
-
-                                        <td class="sorting_1" tabindex="0">Angelica Garcia Perez</td>
-                                        <td>$ 100</td>
-                                        <td style="display: none;">Local</td>
-                                        <td style="display: none;">-</td>
-
-                                        <td style="display: none;"><br>2    paquete de pierna y muslo de pollo  $ 50</td>
-                                    </tr>
-
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1" tabindex="0">Josue Sanches Torres</td>
-                                        <td>$ 1000 </td>
-                                        <td style="display: none;">A Domicilio</td>
-                                        <td style="display: none;">Col. Las Americas, CP: 87000, Referencia: Enfrente de la Iglesia</td>
-                                        <td style="display: none;"><br>5    Kilo de pollo para asar preparado   $ 150 <br>5 paquete de Salchichon   $ 50</td>
-                                    </tr>
-
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1" tabindex="0">Ricardo Hernadez Garcia</td>
-                                        <td>$ 1500</td>
-                                        <td style="display: none;">A Domicilio</td>
-                                        <td style="display: none;">Col La Moderna, CP: 87123, Referencia: Entre una vulcanizadora y una casa con porton negro</td>
-                                        <td style="display: none;"><br>5     kilo de Carne comercial    $ 70 <br>3    Kilo de pollo para asar preparado   $ 150<br>5   paquete de salchichas para asar     $70<br>5     paquete de carne deshebrada     $ 60<br>1    Sazonador Con Ajo   $ 50</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- end row -->
+                            <div>
+                                <strong>Francisco Isaac Perasles Morales</strong> - Copyright &copy; 2017
+                            </div>
+                        </div> <!-- end footer -->
 
                     </div>
-                    <!-- end container -->
+                    <!-- End #page-right-content -->
 
-                    <div class="footer">
-
-                        <div>
-                            <strong>Francisco Isaac Perasles Morales</strong> - Copyright &copy; 2017
-                        </div>
-                    </div> <!-- end footer -->
-
-                </div>
-                <!-- End #page-right-content -->
-
+                    </div>
+                <!-- end .page-contentbar -->
             </div>
-            <!-- end .page-contentbar -->
-        </div>
-        <!-- End #page-wrapper -->
+            <!-- End #page-wrapper -->
 
 
 
-        <!-- js placed at the end of the document so the pages load faster -->
-        <script src="assets/js/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
+            <!-- js placed at the end of the document so the pages load faster -->
+            <script src="assets/js/jquery-2.1.4.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/metisMenu.min.js"></script>
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <!-- Datatable js -->
-        <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
-        <script src="assets/plugins/datatables/dataTables.buttons.min.js"></script>
-        <script src="assets/plugins/datatables/buttons.bootstrap.min.js"></script>
-        <script src="assets/plugins/datatables/jszip.min.js"></script>
-        <script src="assets/plugins/datatables/pdfmake.min.js"></script>
-        <script src="assets/plugins/datatables/vfs_fonts.js"></script>
-        <script src="assets/plugins/datatables/buttons.html5.min.js"></script>
-        <script src="assets/plugins/datatables/buttons.print.min.js"></script>
-        <script src="assets/plugins/datatables/dataTables.keyTable.min.js"></script>
-        <script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
-        <script src="assets/plugins/datatables/responsive.bootstrap.min.js"></script>
-        <script src="assets/plugins/datatables/dataTables.scroller.min.js"></script>
-        <script src="assets/plugins/datatables/dataTables.colVis.js"></script>
-        <script src="assets/plugins/datatables/dataTables.fixedColumns.min.js"></script>
+            <!-- Datatable js -->
+            <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
+            <script src="assets/plugins/datatables/dataTables.buttons.min.js"></script>
+            <script src="assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+            <script src="assets/plugins/datatables/jszip.min.js"></script>
+            <script src="assets/plugins/datatables/pdfmake.min.js"></script>
+            <script src="assets/plugins/datatables/vfs_fonts.js"></script>
+            <script src="assets/plugins/datatables/buttons.html5.min.js"></script>
+            <script src="assets/plugins/datatables/buttons.print.min.js"></script>
+            <script src="assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+            <script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
+            <script src="assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+            <script src="assets/plugins/datatables/dataTables.scroller.min.js"></script>
+            <script src="assets/plugins/datatables/dataTables.colVis.js"></script>
+            <script src="assets/plugins/datatables/dataTables.fixedColumns.min.js"></script>
 
-        <!-- init -->
-        <script src="assets/pages/jquery.datatables.init.js"></script>
+            <!-- init -->
+            <script src="assets/pages/jquery.datatables.init.js"></script>
 
-        <!-- App Js -->
-        <script src="assets/js/jquery.app.js"></script>
+            <!-- App Js -->
+            <script src="assets/js/jquery.app.js"></script>
 
-    </body>
-</html>    
+            </body>
+        </html>    

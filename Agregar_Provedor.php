@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Agregar Empleado</title>
+        <title>Agregar Empleado - SuKarne</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -15,10 +15,10 @@
         <link rel="stylesheet" href="assets/plugins/switchery/switchery.min.css">
         <link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
-		<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+        <link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
         <!-- Summernote css -->
         <link href="assets/plugins/summernote/summernote.css" rel="stylesheet" />
 
@@ -37,11 +37,11 @@
 
     <body>
         <?php
-            include 'PHP/islogin.php';
-            if(!$log)
-            {
-                header("location:index.php");
-            }
+        include 'PHP/islogin.php';
+        if(!$log)
+        {
+            header("location:index.php");
+        }
         ?>
         <div id="page-wrapper">
 
@@ -139,133 +139,159 @@
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <?php
-                                        echo "<img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>";
-                                    ?>
+
+                                    <img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>
+
                                 </div>
                                 <div class="user-info">
-                                    <a href="#">Stanley Jones</a>
-                                    <p class="text-muted m-0">Administrator</p>
-                                </div>
-                            </div>
-                            <!--- End User Detail box -->
+                                    <?php
+                                    include 'PHP/conexion.php';
 
-                            <!-- Left Menu Start -->
-                            <?php
+                                    $user = $_SESSION['username'];
+
+                                    $_sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona WHERE c.usuario = '$user'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error datos persona Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    ?>
+
+                                    <a href='#'><?php echo $_row['nombre'];?></a>
+
+                                    <?php    
+                                    $id = $_row['id_persona'];
+                                    $_sql = "SELECT COUNT(*) Nrow FROM administrador WHERE id_admin = '$id'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error tipo empleado Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    if($_row['Nrow'] > 0)
+                                    {
+                                        echo "<p class='text-muted m-0'>Administrator</p>";
+                                    }
+                                    else
+                                    {
+                                        echo "<p class='text-muted m-0'>Empleado</p>";
+                                    }   
+
+                                    ?>
+                                </div>
+                                <!--- End User Detail box -->
+
+                                <!-- Left Menu Start -->
+                                <?php
                                 include 'PHP/menu.php';
-                             ?>
-                        </div>
-                    </div><!--Scrollbar wrapper-->
-                </aside>
-                <!--left navigation end-->
+                                ?>
+                            </div>
+                        </div><!--Scrollbar wrapper-->
+                        </aside>
+                    <!--left navigation end-->
 
-                <!-- START PAGE CONTENT -->
-                <div id="page-right-content">
-                    
-                    <div class="col-lg-20">
+                    <!-- START PAGE CONTENT -->
+                    <div id="page-right-content">
+
+                        <div class="col-lg-20">
+                            <div class="p-20 m-b-20">
+                                <h4 class="header-title m-t-0">Agregar Proveedor</h4>
                                 <div class="p-20 m-b-20">
-                                    <h4 class="header-title m-t-0">Agregar Proveedor</h4>
-                                    <div class="p-20 m-b-20">
-                                        <form role="form" class="form-validation" autocomplete="off" action="PHP/nuevoProvedor.php" method="post">
-                                            <div class="form-group row">
-                                                <label for="inputEmail3" class="col-sm-4 form-control-label">Nombre<span class="text-danger">*</span></label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre" required>
-                                                </div>
+                                    <form role="form" class="form-validation" autocomplete="off" action="PHP/nuevoProvedor.php" method="post">
+                                        <div class="form-group row">
+                                            <label for="inputEmail3" class="col-sm-4 form-control-label">Nombre<span class="text-danger">*</span></label>
+                                            <div class="col-sm-7">
+                                                <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre" required>
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="hori-pass1" class="col-sm-4 form-control-label">Direccion<span class="text-danger"></span></label>
-                                                <div class="col-sm-7">
-                                                    <input id="hori-pass1" type="text" placeholder="Ingrese Direccion" name="direccion" 
-                                                           class="form-control">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="hori-pass1" class="col-sm-4 form-control-label">Direccion<span class="text-danger"></span></label>
+                                            <div class="col-sm-7">
+                                                <input id="hori-pass1" type="text" placeholder="Ingrese Direccion" name="direccion" 
+                                                       class="form-control">
                                             </div>
-                                            
-                                            <div class="form-group row">
-                                                <label for="webSite" class="col-sm-4 form-control-label">Telefono<span class="text-danger">*</span></label>
-                                                <div class="col-sm-7">
-                                                    <input class="form-control"
-                                                           name="telefono" placeholder="Ingrese Telefono" required>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-							<div class="col-sm-12">
-								<div class="p-20 m-b-20">
-									<h4 class="m-b-30 m-t-0 header-title">Descripcion</h4>
-									<textarea name="descripcion" class="summernote" placeholder="Ingrese Descripcion">
-										
-									</textarea>
-								</div>
-							</div>
-						</div>
-                                            
-                            <div class="form-group text-center m-b-0">
-                                <button class="btn btn-success btn-bordered btn-lg" type="submit">
-                                    Aceptar
-                                </button>
-                                <button type="reset" class="btn btn-danger btn-bordered btn-lg">
-                                    Limpiar
-                                </button>
-                            </div>
-                                        </form>
-                                    </div>
+                                        </div>
 
+                                        <div class="form-group row">
+                                            <label for="webSite" class="col-sm-4 form-control-label">Telefono<span class="text-danger">*</span></label>
+                                            <div class="col-sm-7">
+                                                <input class="form-control"
+                                                       name="telefono" placeholder="Ingrese Telefono" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="p-20 m-b-20">
+                                                    <h4 class="m-b-30 m-t-0 header-title">Descripcion</h4>
+                                                    <textarea name="descripcion" class="summernote" placeholder="Ingrese Descripcion">
+
+                                                    </textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group text-center m-b-0">
+                                            <button class="btn btn-success btn-bordered btn-lg" type="submit">
+                                                Aceptar
+                                            </button>
+                                            <button type="reset" class="btn btn-danger btn-bordered btn-lg">
+                                                Limpiar
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
+
                             </div>
-                    
-                    <div class="footer">
-                        <div>
-                            <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
                         </div>
-                    </div> <!-- end footer -->
 
-                </div>
-                <!-- End #page-right-content -->
+                        <div class="footer">
+                            <div>
+                                <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
+                            </div>
+                        </div> <!-- end footer -->
 
+                    </div>
+                    <!-- End #page-right-content -->
+
+                    </div>
+                <!-- end .page-contentbar -->
             </div>
-            <!-- end .page-contentbar -->
-        </div>
-        <!-- End #page-wrapper -->
+            <!-- End #page-wrapper -->
 
 
 
-        <!-- js placed at the end of the document so the pages load faster -->
-        <script src="assets/js/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
+            <!-- js placed at the end of the document so the pages load faster -->
+            <script src="assets/js/jquery-2.1.4.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/metisMenu.min.js"></script>
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
-        <script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
-        <script src="assets/plugins/switchery/switchery.min.js"></script>
-        <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
+            <script src="assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+            <script src="assets/plugins/select2/js/select2.min.js" type="text/javascript"></script>
+            <script src="assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+            <script src="assets/plugins/switchery/switchery.min.js"></script>
+            <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
 
-        <script src="assets/plugins/moment/moment.js"></script>
-     	<script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
-     	<script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-     	<script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-     	<script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
-     	<script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-        <script src="assets/plugins/summernote/summernote.min.js"></script>
+            <script src="assets/plugins/moment/moment.js"></script>
+            <script src="assets/plugins/timepicker/bootstrap-timepicker.js"></script>
+            <script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+            <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+            <script src="assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+            <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+            <script src="assets/plugins/summernote/summernote.min.js"></script>
 
-        <!-- form advanced init js -->
-        <script src="assets/pages/jquery.form-advanced.init.js"></script>
+            <!-- form advanced init js -->
+            <script src="assets/pages/jquery.form-advanced.init.js"></script>
 
-        <!-- App Js -->
-        <script src="assets/js/jquery.app.js"></script>
+            <!-- App Js -->
+            <script src="assets/js/jquery.app.js"></script>
 
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('.form-validation').parsley();
-                $('.summernote').summernote({
-                    height: 350,                 // set editor height
-                    minHeight: null,             // set minimum height of editor
-                    maxHeight: null,             // set maximum height of editor
-                    focus: false                 // set focus to editable area after initializing summernote
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('.form-validation').parsley();
+                    $('.summernote').summernote({
+                        height: 350,                 // set editor height
+                        minHeight: null,             // set minimum height of editor
+                        maxHeight: null,             // set maximum height of editor
+                        focus: false                 // set focus to editable area after initializing summernote
+                    });
                 });
-            });
-        </script>
+            </script>
 
-    </body>
-</html>
+            </body>
+        </html>

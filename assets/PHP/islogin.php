@@ -1,5 +1,4 @@
 <?PHP
-    //verificamos si se a iniciado sesion en el sistema
     session_start();//inciar sesion
     $log = false;
 

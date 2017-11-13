@@ -129,164 +129,192 @@
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+
+                                    <img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>
+
                                 </div>
                                 <div class="user-info">
-                                    <a href="#">Stanley Jones</a>
-                                    <p class="text-muted m-0">Administrator</p>
+                                    <?php
+                                    include 'PHP/conexion.php';
+
+                                    $user = $_SESSION['username'];
+
+                                    $_sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona WHERE c.usuario = '$user'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error datos persona Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    ?>
+
+                                    <a href='#'><?php echo $_row['nombre'];?></a>
+
+                                    <?php    
+                                    $id = $_row['id_persona'];
+                                    $_sql = "SELECT COUNT(*) Nrow FROM administrador WHERE id_admin = '$id'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error tipo empleado Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    if($_row['Nrow'] > 0)
+                                    {
+                                        echo "<p class='text-muted m-0'>Administrator</p>";
+                                    }
+                                    else
+                                    {
+                                        echo "<p class='text-muted m-0'>Empleado</p>";
+                                    }   
+
+                                    ?>
                                 </div>
+                                <!--- End User Detail box -->
+
+                                <!-- Left Menu Start -->
+                                <?php
+                                include 'PHP/menu.php';
+                                ?>
                             </div>
-                            <!--- End User Detail box -->
+                        </div><!--Scrollbar wrapper-->
+                        </aside>
+                    <!--left navigation end-->
 
-                            <!-- Left Menu Start -->
-                            <?php
-                            include 'PHP/menu.php';
-                            ?>
-                        </div>
-                    </div><!--Scrollbar wrapper-->
-                </aside>
-                <!--left navigation end-->
+                    <!-- START PAGE CONTENT -->
+                    <div id="page-right-content">
 
-                <!-- START PAGE CONTENT -->
-                <div id="page-right-content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h4 class="header-title m-t-0">Calendario</h4>
+                                </div>
+                            </div> <!-- end row -->
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h4 class="header-title m-t-0">Calendario</h4>
-                            </div>
-                        </div> <!-- end row -->
+                            <div class="row">
+                                <div class="col-lg-12">
 
-                        <div class="row">
-                            <div class="col-lg-12">
-
-                                <div class="m-t-10">
-                                    <div class="row m-b-30">
-                                        <div class="col-md-3">
-                                            <div class="row">
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <a href="#" data-toggle="modal" data-target="#add-category" class="m-t-10 btn btn-lg btn-primary btn-block waves-effect m-t-20 waves-light">
-                                                        <i class="fa fa-plus"></i> Nuevo Evento
-                                                    </a>
-                                                    <div id="external-events" class="m-t-20">
-                                                        <br>
-                                                        <p class="text-muted">Toma y Arrastras Tu Evento Al Calendario </p>
-                                                        <div class="external-event bg-success" data-class="bg-success">
-                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Entrega De Productos
-                                                        </div>
-                                                        <div class="external-event bg-info" data-class="bg-info">
-                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Mi Evento
-                                                        </div>
-                                                        <div class="external-event bg-warning" data-class="bg-warning">
-                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Reunion Con El Jefe
-                                                        </div>
-                                                        <div class="external-event bg-primary" data-class="bg-primary">
-                                                            <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Nuevo Tema
+                                    <div class="m-t-10">
+                                        <div class="row m-b-30">
+                                            <div class="col-md-3">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                        <a href="#" data-toggle="modal" data-target="#add-category" class="m-t-10 btn btn-lg btn-primary btn-block waves-effect m-t-20 waves-light">
+                                                            <i class="fa fa-plus"></i> Nuevo Evento
+                                                        </a>
+                                                        <div id="external-events" class="m-t-20">
+                                                            <br>
+                                                            <p class="text-muted">Toma y Arrastras Tu Evento Al Calendario </p>
+                                                            <div class="external-event bg-success" data-class="bg-success">
+                                                                <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Entrega De Productos
+                                                            </div>
+                                                            <div class="external-event bg-info" data-class="bg-info">
+                                                                <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Mi Evento
+                                                            </div>
+                                                            <div class="external-event bg-warning" data-class="bg-warning">
+                                                                <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Reunion Con El Jefe
+                                                            </div>
+                                                            <div class="external-event bg-primary" data-class="bg-primary">
+                                                                <i class="mdi mdi-checkbox-blank-circle m-r-10 vertical-middle"></i>Nuevo Tema
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div> <!-- end col-->
-                                        <div class="col-md-9">
-                                            <div id="calendar"></div>
-                                        </div> <!-- end col -->
-                                    </div>  <!-- end row -->
-                                </div>
+                                            </div> <!-- end col-->
+                                            <div class="col-md-9">
+                                                <div id="calendar"></div>
+                                            </div> <!-- end col -->
+                                        </div>  <!-- end row -->
+                                    </div>
 
-                                <!-- BEGIN MODAL -->
-                                <div class="modal fade none-border" id="event-modal">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title">Agregar Nuevo Evento</h4>
-                                            </div>
-                                            <div class="modal-body p-20"></div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
-                                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Crear Evento</button>
-                                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Borrar</button>
+                                    <!-- BEGIN MODAL -->
+                                    <div class="modal fade none-border" id="event-modal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4 class="modal-title">Agregar Nuevo Evento</h4>
+                                                </div>
+                                                <div class="modal-body p-20"></div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-success save-event waves-effect waves-light">Crear Evento</button>
+                                                    <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Borrar</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Modal Add Category -->
-                                <div class="modal fade none-border" id="add-category">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title">Agregar Categoria</h4>
-                                            </div>
-                                            <div class="modal-body p-20">
-                                                <form role="form">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <label class="control-label">Nombre De Categoria</label>
-                                                            <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name"/>
+                                    <!-- Modal Add Category -->
+                                    <div class="modal fade none-border" id="add-category">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4 class="modal-title">Agregar Categoria</h4>
+                                                </div>
+                                                <div class="modal-body p-20">
+                                                    <form role="form">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label class="control-label">Nombre De Categoria</label>
+                                                                <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name"/>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label class="control-label">Elegir Color De Categoria</label>
+                                                                <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                                                    <option value="success">Success</option>
+                                                                    <option value="danger">Danger</option>
+                                                                    <option value="info">Info</option>
+                                                                    <option value="primary">Primary</option>
+                                                                    <option value="warning">Warning</option>
+                                                                </select>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <label class="control-label">Elegir Color De Categoria</label>
-                                                            <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
-                                                                <option value="success">Success</option>
-                                                                <option value="danger">Danger</option>
-                                                                <option value="info">Info</option>
-                                                                <option value="primary">Primary</option>
-                                                                <option value="warning">Warning</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
-                                                <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Guardar</button>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Guardar</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- END MODAL -->
                                 </div>
-                                <!-- END MODAL -->
+                                <!-- end col-12 -->
+                            </div> <!-- end row -->
+
+                        </div>
+                        <!-- end container -->
+
+                        <div class="footer">
+                            <div>
+                                <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
                             </div>
-                            <!-- end col-12 -->
-                        </div> <!-- end row -->
+                        </div> <!-- end footer -->
 
                     </div>
-                    <!-- end container -->
+                    <!-- End #page-right-content -->
 
-                    <div class="footer">
-                        <div>
-                            <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
-                        </div>
-                    </div> <!-- end footer -->
-
-                </div>
-                <!-- End #page-right-content -->
-
+                    </div>
+                <!-- end .page-contentbar -->
             </div>
-            <!-- end .page-contentbar -->
-        </div>
-        <!-- End #page-wrapper -->
+            <!-- End #page-wrapper -->
 
 
 
-        <!-- js placed at the end of the document so the pages load faster -->
-        <script src="assets/js/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
+            <!-- js placed at the end of the document so the pages load faster -->
+            <script src="assets/js/jquery-2.1.4.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/metisMenu.min.js"></script>
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <!-- Jquery-Ui -->
-        <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+            <!-- Jquery-Ui -->
+            <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 
-        <!-- BEGIN PAGE SCRIPTS -->
-        <script src="assets/plugins/moment/moment.js"></script>
-        <script src='assets/plugins/fullcalendar/js/fullcalendar.min.js'></script>
-        <script src="assets/pages/jquery.fullcalendar.js"></script>
+            <!-- BEGIN PAGE SCRIPTS -->
+            <script src="assets/plugins/moment/moment.js"></script>
+            <script src='assets/plugins/fullcalendar/js/fullcalendar.min.js'></script>
+            <script src="assets/pages/jquery.fullcalendar.js"></script>
 
 
-        <!-- App Js -->
-        <script src="assets/js/jquery.app.js"></script>
+            <!-- App Js -->
+            <script src="assets/js/jquery.app.js"></script>
 
-    </body>
-</html>
+            </body>
+        </html>

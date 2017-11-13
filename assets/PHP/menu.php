@@ -1,4 +1,3 @@
-<!--Tenemos aqui el menu de navegacion para aligerar los demas archivos de secciones-->
 <ul class='metisMenu nav' id='side-menu'>
     <li><a href='dashboard.php'><i class='ti-home'></i> Dashboard </a></li>
 
@@ -19,10 +18,10 @@
     </li>
 
     <li>
-        <a href='javascript: void(0);' aria-expanded='true'><i class='mdi mdi-bus'></i>Proveedores<span class='fa arrow'></span></a>
+        <a href='javascript: void(0);' aria-expanded='true'><i class='mdi mdi-bus'></i>Provedores<span class='fa arrow'></span></a>
         <ul class='nav-second-level nav' aria-expanded='true'>
-            <li><a href='Agregar_Provedor.php'><i class='mdi mdi-account-plus'></i>  Agregar Proveedor</a></li>
-            <li><a href='Lista_Provedores.php'><i class='mdi mdi-account-settings-variant'></i>  Lista De Proveedores</a></li>
+            <li><a href='Agregar_Provedor.php'><i class='mdi mdi-account-plus'></i>  Agregar Provedor</a></li>
+            <li><a href='Lista_Provedores.php'><i class='mdi mdi-account-settings-variant'></i>  Lista De Provedores</a></li>
         </ul>
     </li>
 

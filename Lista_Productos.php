@@ -135,117 +135,144 @@
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+
+                                    <img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>
+
                                 </div>
                                 <div class="user-info">
-                                    <a href="#">Stanley Jones</a>
-                                    <p class="text-muted m-0">Administrator</p>
+                                    <?php
+                                    include 'PHP/conexion.php';
+
+                                    $user = $_SESSION['username'];
+
+                                    $_sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona WHERE c.usuario = '$user'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error datos persona Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    ?>
+
+                                    <a href='#'><?php echo $_row['nombre'];?></a>
+
+                                    <?php    
+                                    $id = $_row['id_persona'];
+                                    $_sql = "SELECT COUNT(*) Nrow FROM administrador WHERE id_admin = '$id'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error tipo empleado Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    if($_row['Nrow'] > 0)
+                                    {
+                                        echo "<p class='text-muted m-0'>Administrator</p>";
+                                    }
+                                    else
+                                    {
+                                        echo "<p class='text-muted m-0'>Empleado</p>";
+                                    }   
+
+                                    ?>
                                 </div>
+                                <!--- End User Detail box -->
+
+                                <!-- Left Menu Start -->
+                                <?php
+                                include 'PHP/menu.php';
+                                ?>
                             </div>
-                            <!--- End User Detail box -->
+                        </div><!--Scrollbar wrapper-->
+                        </aside>
+                    <!--left navigation end-->
 
-                            <!-- Left Menu Start -->
-                            <?php
-                            include 'PHP/menu.php';
-                            ?>
-                        </div>
-                    </div><!--Scrollbar wrapper-->
-                </aside>
-                <!--left navigation end-->
+                    <!-- START PAGE CONTENT -->
+                    <div id="page-right-content">
 
-                <!-- START PAGE CONTENT -->
-                <div id="page-right-content">
-
-                    <div class="container">
-                        <div class="row p-t-20">
-                            <div class="col-sm-12">
-                                <div class="m-b-20 table-responsive">
-                                    <h3>Lista De Productos</h3>
-                                    <table id="datatable-fixed-col" class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Nombre</th>
-                                                <th>Precio</th>
-                                                <th>Cantidad</th>
-                                                <th>Descripcion</th>
-                                                <th>Proveedor</th>
-                                            </tr>
-                                        </thead>
+                        <div class="container">
+                            <div class="row p-t-20">
+                                <div class="col-sm-12">
+                                    <div class="m-b-20 table-responsive">
+                                        <h3>Lista De Productos</h3>
+                                        <table id="datatable-fixed-col" class="table table-striped table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Descripcion</th>
+                                                    <th>Proveedor</th>
+                                                </tr>
+                                            </thead>
 
 
-                                        <tbody>
+                                            <tbody>
 
-                                            <?php
-                                            include 'PHP/conexion.php';
+                                                <?php
 
-                                            $sql = "SELECT pr.nombre as nom, pr.precio as prec, pr.cantidad as cant, pr.descripcion as descr, p.nombre as prov FROM provedor p INNER JOIN producto pr ON pr.id_provedor = p.id_provedor";
-                                            $stmt = mysqli_query($conn,$sql) or die ("error en la consulta");
+                                                $sql = "SELECT pr.nombre as nom, pr.precio as prec, pr.cantidad as cant, pr.descripcion as descr, p.nombre as prov FROM provedor p INNER JOIN producto pr ON pr.id_provedor = p.id_provedor";
+                                                $stmt = mysqli_query($conn,$sql) or die ("error en la consulta");
 
-                                            while($row = mysqli_fetch_array($stmt))
-                                            {
-                                                echo "<tr>
+                                                while($row = mysqli_fetch_array($stmt))
+                                                {
+                                                    echo "<tr>
                                                     <td>".$row['nom']."</td>
                                                     <td>".$row['prec']."</td>
                                                     <td>".$row['cant']."</td>
                                                     <td>".$row['descr']."</td>
                                                     <td>".$row['prov']."</td>
                                                 </tr>";
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- end row -->
+
                         </div>
-                        <!-- end row -->
+                        <!-- end container -->
+
+                        <div class="footer">
+                            <div>
+                                <strong>Simple Admin</strong> - Copyright &copy; 2017
+                            </div>
+                        </div> <!-- end footer -->
 
                     </div>
-                    <!-- end container -->
+                    <!-- End #page-right-content -->
 
-                    <div class="footer">
-                        <div>
-                            <strong>Simple Admin</strong> - Copyright &copy; 2017
-                        </div>
-                    </div> <!-- end footer -->
-
-                </div>
-                <!-- End #page-right-content -->
-
+                    </div>
+                <!-- end .page-contentbar -->
             </div>
-            <!-- end .page-contentbar -->
-        </div>
-        <!-- End #page-wrapper -->
+            <!-- End #page-wrapper -->
 
 
 
-        <!-- js placed at the end of the document so the pages load faster -->
-        <script src="assets/js/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
+            <!-- js placed at the end of the document so the pages load faster -->
+            <script src="assets/js/jquery-2.1.4.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/metisMenu.min.js"></script>
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <!-- Datatable js -->
-        <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
-        <script src="assets/plugins/datatables/dataTables.buttons.min.js"></script>
-        <script src="assets/plugins/datatables/buttons.bootstrap.min.js"></script>
-        <script src="assets/plugins/datatables/jszip.min.js"></script>
-        <script src="assets/plugins/datatables/pdfmake.min.js"></script>
-        <script src="assets/plugins/datatables/vfs_fonts.js"></script>
-        <script src="assets/plugins/datatables/buttons.html5.min.js"></script>
-        <script src="assets/plugins/datatables/buttons.print.min.js"></script>
-        <script src="assets/plugins/datatables/dataTables.keyTable.min.js"></script>
-        <script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
-        <script src="assets/plugins/datatables/responsive.bootstrap.min.js"></script>
-        <script src="assets/plugins/datatables/dataTables.scroller.min.js"></script>
-        <script src="assets/plugins/datatables/dataTables.colVis.js"></script>
-        <script src="assets/plugins/datatables/dataTables.fixedColumns.min.js"></script>
+            <!-- Datatable js -->
+            <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="assets/plugins/datatables/dataTables.bootstrap.js"></script>
+            <script src="assets/plugins/datatables/dataTables.buttons.min.js"></script>
+            <script src="assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+            <script src="assets/plugins/datatables/jszip.min.js"></script>
+            <script src="assets/plugins/datatables/pdfmake.min.js"></script>
+            <script src="assets/plugins/datatables/vfs_fonts.js"></script>
+            <script src="assets/plugins/datatables/buttons.html5.min.js"></script>
+            <script src="assets/plugins/datatables/buttons.print.min.js"></script>
+            <script src="assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+            <script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
+            <script src="assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+            <script src="assets/plugins/datatables/dataTables.scroller.min.js"></script>
+            <script src="assets/plugins/datatables/dataTables.colVis.js"></script>
+            <script src="assets/plugins/datatables/dataTables.fixedColumns.min.js"></script>
 
-        <!-- init -->
-        <script src="assets/pages/jquery.datatables.init.js"></script>
+            <!-- init -->
+            <script src="assets/pages/jquery.datatables.init.js"></script>
 
-        <!-- App Js -->
-        <script src="assets/js/jquery.app.js"></script>
+            <!-- App Js -->
+            <script src="assets/js/jquery.app.js"></script>
 
-    </body>
-</html>    
+            </body>
+        </html>    

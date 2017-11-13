@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Linea De Actividades - SuKarne</title>
+        <title>Historial De Eventos - SuKarne</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -126,129 +126,157 @@
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+
+                                    <img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>
+
                                 </div>
                                 <div class="user-info">
-                                    <a href="#">Stanley Jones</a>
-                                    <p class="text-muted m-0">Administrator</p>
+                                    <?php
+                                    include 'PHP/conexion.php';
+
+                                    $user = $_SESSION['username'];
+
+                                    $_sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona WHERE c.usuario = '$user'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error datos persona Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    ?>
+
+                                    <a href='#'><?php echo $_row['nombre'];?></a>
+
+                                    <?php    
+                                    $id = $_row['id_persona'];
+                                    $_sql = "SELECT COUNT(*) Nrow FROM administrador WHERE id_admin = '$id'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error tipo empleado Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    if($_row['Nrow'] > 0)
+                                    {
+                                        echo "<p class='text-muted m-0'>Administrator</p>";
+                                    }
+                                    else
+                                    {
+                                        echo "<p class='text-muted m-0'>Empleado</p>";
+                                    }   
+
+                                    ?>
+                                </div>
+                                <!--- End User Detail box -->
+
+                                <!-- Left Menu Start -->
+                                <?php
+                                include 'PHP/menu.php';
+                                ?>
+                            </div>
+                        </div><!--Scrollbar wrapper-->
+                        </aside>
+                    <!--left navigation end-->
+
+                    <!-- START PAGE CONTENT -->
+                    <div id="page-right-content">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h4 class="header-title">Historial De Eventos</h4>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="timeline timeline-left">
+                                        <article class="timeline-item alt">
+                                            <div class="text-left">
+                                                <div class="time-show first">
+                                                    <a href="#" class="btn btn-custom">Hoy</a>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="timeline-item">
+                                            <div class="timeline-desk">
+                                                <div class="panel">
+                                                    <div class="timeline-box">
+                                                        <span class="arrow"></span>
+                                                        <span class="timeline-icon"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
+                                                        <h4 class="">Hace 1 Horas</h4>
+                                                        <p class="timeline-date text-muted"><small>08:25 p.m.</small></p>
+                                                        <p>Envio del Pedido #ABV2683</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="timeline-item ">
+                                            <div class="timeline-desk">
+                                                <div class="panel">
+                                                    <div class="timeline-box">
+                                                        <span class="arrow"></span>
+                                                        <span class="timeline-icon bg-success"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
+                                                        <h4 class="text-success">Hace 7 Horas</h4>
+                                                        <p class="timeline-date text-muted"><small>02:00 p.m.</small></p>
+                                                        <p>Reabastecimiento de Stock De Carne</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="timeline-item">
+                                            <div class="timeline-desk">
+                                                <div class="panel">
+                                                    <div class="timeline-box">
+                                                        <span class="arrow"></span>
+                                                        <span class="timeline-icon bg-primary"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
+                                                        <h4 class="text-primary">Hace 9 Horas</h4>
+                                                        <p class="timeline-date text-muted"><small>12:01 p.m.</small></p>
+                                                        <p>Inicio De Sistema de Refigeracion</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="timeline-item">
+                                            <div class="timeline-desk">
+                                                <div class="panel">
+                                                    <div class="timeline-box">
+                                                        <span class="arrow"></span>
+                                                        <span class="timeline-icon bg-danger"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
+                                                        <h4 class="text-danger">Hace 11 Horas</h4>
+                                                        <p class="timeline-date text-muted"><small>11:25 p.m</small></p>
+                                                        <p>Realizacion de Pedido #ACD485039</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
                                 </div>
                             </div>
-                            <!--- End User Detail box -->
+                            <!-- end row -->
 
-                            <!-- Left Menu Start -->
-                            <?php
-                            include 'PHP/menu.php';
-                            ?>
                         </div>
-                    </div><!--Scrollbar wrapper-->
-                </aside>
-                <!--left navigation end-->
+                        <!-- end container -->
 
-                <!-- START PAGE CONTENT -->
-                <div id="page-right-content">
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h4 class="header-title">Linea De Tiempo De Actividades</h4>
-                            </div> <!-- end col -->
-                        </div> <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="timeline timeline-left">
-                                    <article class="timeline-item alt">
-                                        <div class="text-left">
-                                            <div class="time-show first">
-                                                <a href="#" class="btn btn-custom">Hoy</a>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="timeline-box">
-                                                    <span class="arrow"></span>
-                                                    <span class="timeline-icon"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
-                                                    <h4 class="">Hace 1 Horas</h4>
-                                                    <p class="timeline-date text-muted"><small>08:25 p.m.</small></p>
-                                                    <p>Envio del Pedido #ABV2683</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-item ">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="timeline-box">
-                                                    <span class="arrow"></span>
-                                                    <span class="timeline-icon bg-success"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
-                                                    <h4 class="text-success">Hace 7 Horas</h4>
-                                                    <p class="timeline-date text-muted"><small>02:00 p.m.</small></p>
-                                                    <p>Reabastecimiento de Stock De Carne</p>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="timeline-box">
-                                                    <span class="arrow"></span>
-                                                    <span class="timeline-icon bg-primary"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
-                                                    <h4 class="text-primary">Hace 9 Horas</h4>
-                                                    <p class="timeline-date text-muted"><small>12:01 p.m.</small></p>
-                                                    <p>Inicio De Sistema de Refigeracion</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="timeline-box">
-                                                    <span class="arrow"></span>
-                                                    <span class="timeline-icon bg-danger"><i class="mdi mdi-checkbox-blank-circle-outline"></i></span>
-                                                    <h4 class="text-danger">Hace 11 Horas</h4>
-                                                    <p class="timeline-date text-muted"><small>11:25 p.m</small></p>
-                                                    <p>Realizacion de Pedido #ACD485039</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
+                        <div class="footer">
+                            <div>
+                                <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
                             </div>
-                        </div>
-                        <!-- end row -->
+                        </div> <!-- end footer -->
 
                     </div>
-                    <!-- end container -->
+                    <!-- End #page-right-content -->
 
-                    <div class="footer">
-                        <div>
-                            <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
-                        </div>
-                    </div> <!-- end footer -->
-
-                </div>
-                <!-- End #page-right-content -->
-
+                    </div>
+                <!-- end .page-contentbar -->
             </div>
-            <!-- end .page-contentbar -->
-        </div>
-        <!-- End #page-wrapper -->
+            <!-- End #page-wrapper -->
 
 
 
-        <!-- js placed at the end of the document so the pages load faster -->
-        <script src="assets/js/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
+            <!-- js placed at the end of the document so the pages load faster -->
+            <script src="assets/js/jquery-2.1.4.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/metisMenu.min.js"></script>
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <!-- App Js -->
-        <script src="assets/js/jquery.app.js"></script>
+            <!-- App Js -->
+            <script src="assets/js/jquery.app.js"></script>
 
-    </body>
-</html>
+            </body>
+        </html>

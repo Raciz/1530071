@@ -128,62 +128,90 @@
                             <!-- User Detail box -->
                             <div class="user-details">
                                 <div class="pull-left">
-                                    <img src="assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+
+                                    <img src='assets/images/users/avatar-1.jpg' alt='' class='thumb-md img-circle'>
+
                                 </div>
                                 <div class="user-info">
-                                    <a href="#">Stanley Jones</a>
-                                    <p class="text-muted m-0">Administrator</p>
+                                    <?php
+                                    include 'PHP/conexion.php';
+
+                                    $user = $_SESSION['username'];
+
+                                    $_sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona WHERE c.usuario = '$user'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error datos persona Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    ?>
+
+                                    <a href='#'><?php echo $_row['nombre'];?></a>
+
+                                    <?php    
+                                    $id = $_row['id_persona'];
+                                    $_sql = "SELECT COUNT(*) Nrow FROM administrador WHERE id_admin = '$id'";
+                                    $_stmt = mysqli_query($conn,$_sql) or die ("error tipo empleado Menu");
+                                    $_row = mysqli_fetch_array($_stmt);
+
+                                    if($_row['Nrow'] > 0)
+                                    {
+                                        echo "<p class='text-muted m-0'>Administrator</p>";
+                                    }
+                                    else
+                                    {
+                                        echo "<p class='text-muted m-0'>Empleado</p>";
+                                    }   
+
+                                    ?>
                                 </div>
+                                <!--- End User Detail box -->
+
+                                <!-- Left Menu Start -->
+                                <?php
+                                include 'PHP/menu.php';
+                                ?>
                             </div>
-                            <!--- End User Detail box -->
+                        </div><!--Scrollbar wrapper-->
+                        </aside>
+                    <!--left navigation end-->
 
-                            <!-- Left Menu Start -->
-                            <?php
-                            include 'PHP/menu.php';
-                            ?>
-                        </div>
-                    </div><!--Scrollbar wrapper-->
-                </aside>
-                <!--left navigation end-->
+                    <!-- START PAGE CONTENT -->
+                    <div id="page-right-content">
 
-                <!-- START PAGE CONTENT -->
-                <div id="page-right-content">
+                        <div class="container">
+                            <div class="col-lg-14">
+                                <div class="card-box m-t-30">
+                                    <h4 class="header-title m-t-0 m-b-20">Contacto</h4>
 
-                    <div class="container">
-                        <div class="col-lg-14">
-                            <div class="card-box m-t-30">
-                                <h4 class="header-title m-t-0 m-b-20">Contacto</h4>
+                                    <ul class="nav nav-tabs tabs-bordered nav-justified">
+                                        <li class="active">
+                                            <a href="#profile-b2" data-toggle="tab" aria-expanded="true">
+                                                <span class="visible-xs"><i class="fa fa-user"></i></span>
+                                                <span class="hidden-xs">Administradores</span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="#messages-b2" data-toggle="tab" aria-expanded="false">
+                                                <span class="visible-xs"><i class="mdi mdi-cellphone"></i></span>
+                                                <span class="hidden-xs">Numeros de Contacto</span>
+                                            </a>
+                                        </li>
+                                    </ul>
 
-                                <ul class="nav nav-tabs tabs-bordered nav-justified">
-                                    <li class="active">
-                                        <a href="#profile-b2" data-toggle="tab" aria-expanded="true">
-                                            <span class="visible-xs"><i class="fa fa-user"></i></span>
-                                            <span class="hidden-xs">Administradores</span>
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a href="#messages-b2" data-toggle="tab" aria-expanded="false">
-                                            <span class="visible-xs"><i class="mdi mdi-cellphone"></i></span>
-                                            <span class="hidden-xs">Numeros de Contacto</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="profile-b2">
 
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="profile-b2">
+                                            <div class="row">
 
-                                        <div class="row">
+                                                <?php
 
-                                            <?php
+                                                include 'PHP/conexion.php';
 
-                                            include 'PHP/conexion.php';
-
-                                            $sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona
+                                                $sql = "SELECT * FROM cuenta c INNER JOIN persona p ON p.id_persona = c.id_persona
                                                            INNER JOIN administrador a ON a.id_admin = p.id_persona";
-                                            $stmt = mysqli_query($conn,$sql) or die ("Error En La Consulta");
-                                            while($row = mysqli_fetch_array($stmt))
-                                            {
-                                                echo"<div class='col-md-4'>
+                                                $stmt = mysqli_query($conn,$sql) or die ("Error En La Consulta");
+                                                while($row = mysqli_fetch_array($stmt))
+                                                {
+                                                    echo"<div class='col-md-4'>
                                         <div class='text-center card-box'>
                                             <div class='clearfix'></div>
                                                 <div class='member-card'>
@@ -207,78 +235,78 @@
                                             </div>
                                         </div>
                                     </div>";
-                                            }
-                                            ?>
+                                                }
+                                                ?>
+
+                                            </div>
+                                            <!-- end row -->
 
                                         </div>
-                                        <!-- end row -->
+
+
+                                        <div class="tab-pane" id="messages-b2">
+                                            <h3>Telefono:</h3>
+                                            <p>834-537-89-45</p>
+                                            <p>834-789-56-33</p>
+                                            <p>834-672-30-89</p>
+
+                                            <h3>Correos</h3>
+                                            <p>SuKarne@SuKarne.com</p>
+                                            <p>Atencion_Cliente@SuKarne.com</p>
+                                        </div>
+
 
                                     </div>
-
-
-                                    <div class="tab-pane" id="messages-b2">
-                                        <h3>Telefono:</h3>
-                                        <p>834-537-89-45</p>
-                                        <p>834-789-56-33</p>
-                                        <p>834-672-30-89</p>
-
-                                        <h3>Correos</h3>
-                                        <p>SuKarne@SuKarne.com</p>
-                                        <p>Atencion_Cliente@SuKarne.com</p>
-                                    </div>
-
-
                                 </div>
-                            </div>
-                        </div> 
+                            </div> 
 
+
+                        </div>
+                        <!-- end container -->
+
+                        <div class="footer">
+                            <div>
+                                <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
+                            </div>
+                        </div> <!-- end footer -->
 
                     </div>
-                    <!-- end container -->
+                    <!-- End #page-right-content -->
 
-                    <div class="footer">
-                        <div>
-                            <strong>Francisco Isaac Perales Morales</strong> - Copyright &copy; 2017
-                        </div>
-                    </div> <!-- end footer -->
-
-                </div>
-                <!-- End #page-right-content -->
-
+                    </div>
+                <!-- end .page-contentbar -->
             </div>
-            <!-- end .page-contentbar -->
-        </div>
-        <!-- End #page-wrapper -->
+            <!-- End #page-wrapper -->
 
-        <!-- js placed at the end of the document so the pages load faster -->
-        <script src="assets/js/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
+            <!-- js placed at the end of the document so the pages load faster -->
+            <script src="assets/js/jquery-2.1.4.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/metisMenu.min.js"></script>
+            <script src="assets/js/jquery.slimscroll.min.js"></script>
 
-        <!-- google maps api -->
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <!-- Gmaps file -->
-        <script src="assets/plugins/gmaps/gmaps.min.js"></script>
+            <!-- google maps api -->
+            <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+            <!-- Gmaps file -->
+            <script src="assets/plugins/gmaps/gmaps.min.js"></script>
 
-        <!-- Google map Init -->
-        <script src="assets/pages/jquery.gmaps.js"></script>
+            <!-- Google map Init -->
+            <script src="assets/pages/jquery.gmaps.js"></script>
 
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-        <script src="assets/plugins/jvectormap/gdp-data.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-uk-mill-en.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-au-mill.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-us-il-chicago-mill-en.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-ca-lcc.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-de-mill.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-in-mill.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-asia-mill.js"></script>
-        <script src="assets/pages/jquery.jvectormap.init.js"></script>
+            <script src="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+            <script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+            <script src="assets/plugins/jvectormap/gdp-data.js"></script>
+            <script src="assets/plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+            <script src="assets/plugins/jvectormap/jquery-jvectormap-uk-mill-en.js"></script>
+            <script src="assets/plugins/jvectormap/jquery-jvectormap-au-mill.js"></script>
+            <script src="assets/plugins/jvectormap/jquery-jvectormap-us-il-chicago-mill-en.js"></script>
+            <script src="assets/plugins/jvectormap/jquery-jvectormap-ca-lcc.js"></script>
+            <script src="assets/plugins/jvectormap/jquery-jvectormap-de-mill.js"></script>
+            <script src="assets/plugins/jvectormap/jquery-jvectormap-in-mill.js"></script>
+            <script src="assets/plugins/jvectormap/jquery-jvectormap-asia-mill.js"></script>
+            <script src="assets/pages/jquery.jvectormap.init.js"></script>
 
 
-        <!-- App Js -->
-        <script src="assets/js/jquery.app.js"></script>
-    </body>
-</html>
+            <!-- App Js -->
+            <script src="assets/js/jquery.app.js"></script>
+            </body>
+        </html>
